@@ -25,6 +25,15 @@
 
 }
 
-@media screen {
+@media screen and (min-width: 320px) {
+    /* Mob Type Scale */
+    :root{
+            /*Body*/
+    --font-primary:'Noto Sans', sans-serif;
+    /*Heading*/
+    --font-heading: 'Vesper Libre', serif;
+    /*Base values*/
+    --text-base-size: 1rem;
     
+    }
 }
