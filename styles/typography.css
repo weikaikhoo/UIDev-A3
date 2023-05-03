@@ -3,5 +3,28 @@
     /*Body*/
     --font-primary:'Noto Sans', sans-serif;
     /*Heading*/
-    --font-heading: 
+    --font-heading: 'Vesper Libre', serif;
+    /*Base values*/
+    --text-base-size: 1rem;
+
+    /* Type scale */
+    --text-scale-ratio: 1.50;
+    --text-scale-ratio-cta: 1.25;
+    /* Web captions & References */
+    --text-sm: calc(1rem / var(--text-scale-ratio));
+    /* Web paragraph */
+    --text-md: calc(1rem * var(--text-scale-ratio));
+    /* Web CTA */
+    --text-lg: calc(1rem * var(--text-scale-ratio-cta));
+    /* Web Subheading */
+    --text-xl: calc(1rem * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    /* Web H2 */
+    --text-xl: calc(1rem * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    /* Web H3 */
+    --text-xxl: calc(1rem * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+
+}
+
+@media screen {
+    
 }
