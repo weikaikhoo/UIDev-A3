@@ -1,0 +1,14 @@
+@import url(typography.css);
+:root{
+    /* Spacing */
+    --baseline: var(--text-base-size);
+
+    --space-sm: calc(var(--baseline) / 2);
+    --space-md: var(--baseline);
+    --space-lg: calc(var(--baseline) * 2);
+    --space-xl: calc(var(--baseline) *3);
+
+    /* line-height */
+    --heading-line-height: 1.2;
+    --body-line-height: 1.4;
+}

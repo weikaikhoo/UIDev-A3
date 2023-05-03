@@ -2,3 +2,18 @@
 @import url(typography.css);
 @import url(spacing.css);
 @import url(layout.css);
+
+:root{
+    font-family: var(--font-primary);
+    color: var(--color-primary-text);
+}
+
+h1{
+    font-family: var(--font-heading);
+    font-size: var(--text-xxl);
+}
+
+h2{
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+}
