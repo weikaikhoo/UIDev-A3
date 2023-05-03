@@ -1,0 +1,11 @@
+:root {
+    --color-primary-text: #4B4538;
+    --color-light-text:#D2E0D9;
+    --color-dark-text: #103320;
+
+    --color-cta:#206540;
+    --color-btn-border:#206540; 
+
+    --color-background:#FDF7EA;
+    --color-sec-background: #F6EFDF;
+} 
