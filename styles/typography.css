@@ -37,4 +37,16 @@
     }
 }
 
+/* Heading changes */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    margin-bottom: var(--space-sm);
+    line-height: var(--line-height-heading) ;
+}
+h1{
+    font-size: var(--text-xxl);
+}
 
+h2{
+    font-size: var(--text-xl);
+}

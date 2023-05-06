@@ -6,23 +6,11 @@
 :root{
     font-family: var(--font-primary);
     color: var(--color-primary-text);
-
 }
 
-
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    margin-bottom: var(--space-sm);
-    line-height: var(--line-height-heading) ;
+body{
+    background-color: var(--color-background);
 }
-h1{
-    font-size: var(--text-xxl);
-}
-
-h2{
-    font-size: var(--text-xl);
-}
-
 header, footer{
     color: var(--color-light-text);
     background-color: var(--color-cta);
@@ -33,6 +21,27 @@ header{
     flex-direction: row;
     padding: 40px;
 }
+footer{
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+}
+.footer--column{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+.footer__element{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+#copyright{
+    align-self: flex-end;
+}
 
 #navbar{
     display: flex;
@@ -42,7 +51,6 @@ header{
 
 .navbtn{
     /* Auto layout */
-
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -60,4 +68,8 @@ header{
 #logo{
     width: 58px;
     height: 62px;
+}
+
+section{
+    padding: 40px;
 }
