@@ -1,4 +1,5 @@
 @import url(colour.css);
+@import url(spacing.css);
 :root{
     /*Body*/
     --font-primary:'Noto Sans', sans-serif;
@@ -41,7 +42,7 @@
 h1, h2, h3 {
     font-family: var(--font-heading);
     margin-bottom: var(--space-sm);
-    line-height: var(--line-height-heading) ;
+    line-height: var(--heading-line-height) ;
 }
 h1{
     font-size: var(--text-xxl);
@@ -49,4 +50,11 @@ h1{
 
 h2{
     font-size: var(--text-xl);
+}
+
+p{
+    font-family: var(--font-primary);
+    font-size: var(--text-md);
+    margin-bottom: var(--space-md);
+    line-height: var(--body-line-height);
 }
