@@ -11,19 +11,31 @@
     /* Type scale */
     --text-scale-ratio: 1.50;
     --text-scale-ratio-cta: 1.25;
-    /* Web captions & References */
+    /* Web captions & References 20px*/
     --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio));
-    /* Web paragraph */
+    /* Web paragraph 24px*/
     --text-md: calc(var(--text-base-size) * var(--text-scale-ratio));
-    /* Web CTA */
+    /* Web CTA 30px*/
     --text-lg: calc(var(--text-base-size) * var(--text-scale-ratio-cta));
-    /* Web Subheading */
+    /* Web Subheading 45px*/
     --text-xl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio));
-    /* Web H2 */
+    /* Web H2 67.5px*/
     --text-xl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio));
-    /* Web H1 */
+    /* Web H1 101.3px*/
     --text-xxl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
 
+
+    /* Font-weight */
+    /* Light */
+    --font-light: 300;
+    /* Regular */
+    --font-regular: 400;
+    /* Medium */
+    --font-medium: 500;
+    /* Semibold */
+    --font-semibold: 600;
+    /* Bold */
+    --font-bold: 700;
 }
 
 
@@ -46,10 +58,24 @@ h1, h2, h3 {
 }
 h1{
     font-size: var(--text-xxl);
+    font-weight: var(--font-bold);
 }
 
 h2{
     font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+}
+h3{
+    font-weight:var(--font-semibold);
+}
+
+.font__cta{
+    font-size: var(--text-lg);
+    font-family:var(--font-primary);
+    font-weight: var(--font-medium);
+    font-size: var(--text-lg);
+    line-height: var(--body-line-height);
+    text-align: center;
 }
 
 p{
@@ -57,4 +83,5 @@ p{
     font-size: var(--text-md);
     margin-bottom: var(--space-md);
     line-height: var(--body-line-height);
+    font-weight: var(--font-regular);
 }

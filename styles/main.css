@@ -25,18 +25,27 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     padding: 40px;
+    align-items: center;
 }
 .footer--column{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
     gap: 24px;
 }
+
+
 .footer__element{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-content: center;
     gap: 16px;
+}
+
+.footer__icon{
+    width: 2rem;
+    /* align-self: center; */
 }
 
 #copyright{
@@ -115,6 +124,7 @@ section{
 
 .btn--hero{
     background-color: var(--color-hover);
+
 }
 
 a{
@@ -150,7 +160,7 @@ a{
 .white-overlay{
     background-color: rgba(255, 255, 255, 0.55);
     width: 100%;
-    height: 85.25%;
+    height: 85.4%;
     position:absolute;
     left: 0px;
     top: 142px;
@@ -159,3 +169,46 @@ a{
 .stack-top{
     z-index: 9;
 }
+
+.carousell{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.menu-item__img{
+    width: 340.18px;
+    height: 340.18px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10rem;
+}
+
+.menu-item__box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 403.04px;
+    height: 363.96px;
+    border: 1px solid #4B4538;
+    border-radius: 8px;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    gap:10px;
+    padding: 8px;
+    /* margin-top: 120px; */
+    margin-top: 8rem;
+}
+
+.menu-item__text-box{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
