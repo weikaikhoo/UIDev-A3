@@ -37,7 +37,7 @@ header{
 footer{
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 3%;
     align-items: center;
 }
 .footer__column{
