@@ -15,9 +15,11 @@ body{
 a{
     text-decoration: none;
 }
-
+#hamburger{
+    display: none;
+}
 section{
-    padding: 2rem;
+    padding: 3%;
 }
 
 header, footer{
@@ -28,7 +30,9 @@ header, footer{
 
 header{
     flex-direction: row;
-    padding: 2rem;
+    padding: 3%;
+    position: sticky;
+    top: 0%;
 }
 footer{
     flex-direction: row;
@@ -36,30 +40,26 @@ footer{
     padding: 2rem;
     align-items: center;
 }
-
-
-.footer--column{
+.footer__column{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 1.2rem;
 }
-
-
-.footer__element{
+.footer__column__element{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.75rem;
 }
 
-.footer__element > p{
+.footer__column__element > p{
     font-size: var(--text-sm);
     margin: auto 0;
 }
 
-.footer__icon{
+.footer__column__icon{
     width: 1rem;
     /* align-self: center; */
 }
@@ -73,6 +73,7 @@ footer{
     display: flex;
     flex-direction: row;
     margin-left: auto;
+    align-items: center;
 }
 
 .navbtn{
@@ -82,9 +83,6 @@ footer{
     align-items: flex-start;
     padding: 0.5em 1em;
     gap: 0.5rem;
-
-    /* width: 127px;
-    height: 61px; */
 
     border-radius: 20px;
     align-items: center;
@@ -97,8 +95,6 @@ footer{
     height: 62px;
 }
 
-
-
 /* Hero section */
 #hero{
     display: flex;
@@ -107,18 +103,13 @@ footer{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* height: 753px; */
-    /* height: 40em; */
-    padding: 10rem 2rem;
+    /* padding: 5%; */
     color:var(--color-dark-text);
     justify-content: center;
+    text-align: left;
 }
 
-.stack-top{
-    z-index: 9;
-}
-
-.stack-top > p{
+.hero__description{
     font-size: var(--text-lg);
     font-weight: var(--font-semibold);
 }
@@ -178,10 +169,7 @@ footer{
     border: var(--color-cta) 3px solid;
 }
 
-
-
 /* sidebar */
-
 .sidebar-container{
     display: flex;
     flex-direction: row;
@@ -199,6 +187,8 @@ footer{
     flex-basis:0;
     flex-grow:999;
     min-width:40%;
+    max-width: 60%;
+
 }
 
 /* About section */
@@ -206,56 +196,197 @@ footer{
     padding: 0;
 }
 .about__cta{
-    padding: 2em;
+    padding: 3%;
+    max-width: 40%;
 }
 
 .about__image{
-    padding: 2em 2em 2em 2em;
+    padding: 2em;
     border-radius: 5rem;
     margin: auto;
+    max-width: 40%;
 }
 
 /* Menu section */
+#menu{
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+}
 .carousell{
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     display: flex;
     flex-direction: row;
+    /* flex-wrap: wrap; */
+    gap: 2rem;
 }
 
 .menu-item__img{
-    width: 12rem;
-    height: 12rem;
+    width: 11rem;
+    height: 11rem;
     border-radius: 50%;
+    object-fit:cover;
     position: absolute;
-    bottom: 10rem;
+    bottom: 10%;
+    transform: translate(0%, -80%);
 }
 
-.menu-item__box{
+.menu-item{
     position: relative;
     display: flex;
     flex-direction: column;
+    flex-direction: wrap;
+
     box-sizing: border-box;
-    width: 20rem;
-    height: 24rem;
+    width: 25%;
     border: 1px solid #4B4538;
-    border-radius: 8px;
+    border-radius: 0.5rem;
+
     align-items: center;
     text-align: center;
     justify-content: flex-end;
-    gap:10px;
+
+    gap:0.5rem;
     padding: 0.4em;
-    /* margin-top: 120px; */
-    margin-top: 8rem;
+    padding-top: 10%;
+    margin-top: 4rem;
 }
 
-.menu-item__text-box{
-    height: 40%;
+.menu-item__text{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     padding: 0.5em;
-
 }
+.menu-item__text__name{
+    height: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: auto;
+}
+.carousell__pages{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.carousell__pages__dot{
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    background-color:  var(--color-hover);
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+.carousell__pages__dot:hover{
+    transform: translateY(-0.1em);
+    box-shadow: 0 0.5em 0.5em -0.4em black;
+}
+.carousell__pages__dot:active{
+    background-color: var(--color-cta);
+}
+
+@media screen and (min-width: 768px) and (max-width:1023px) {
+    #logo{
+        scale: 0.75;
+    }
+    .carousell{
+        padding-top: 3em;
+    }
+    .menu-item{
+        width:25%;
+        padding-top: 5%;
+    }
+    .menu-item__img{
+        width: 7em;
+        height: 7em;
+    }
+    .carousell__arrow{
+        display: block;
+        height:2rem;
+    }
+}
+/* Tablet and smaller */
+@media screen and (width < 768px){
+    #logo{
+        scale: 0.5;
+    }
+    #menu{
+        gap:1em;
+    }
+    .carousell{
+        gap: 2em;
+        padding-top: 1em;
+    }
+    .about__cta{
+        max-width: 100%;
+    }
+    .about__image{
+        max-width: 100%;
+    }
+    .menu-item{
+        width: auto;
+        /* margin-top: 2em; */
+    }
+    .menu-item__img{
+        width: 7rem;
+        height: 7rem;
+        transform: translate(0%, -90%);
+    }
+    .carousell__arrow{
+        display: none;
+        height: 2em;
+    }
+    .mob-hidden{
+        display: none;
+    }
+    footer{
+        flex-direction: column;
+        gap: 1.25em;
+        text-align: center;
+    }
+    #copyright{
+        align-self: center;
+    }
+    .footer__column{
+        justify-content: center;
+        align-items: center;        
+    }
+    .footer__column:nth-of-type(1){order: 1;}
+    .footer__column:nth-of-type(2){order: 3;}
+    .footer__column:nth-of-type(3){order: 2;}
+}
+
+@media screen and (width<=425px){
+    #menu, #about, #hero{
+        text-align: center;
+    }
+    .navbtn{
+        display: none;
+    }
+    #hamburger{
+        display: block;
+        padding: 0.25em;
+    }
+    #cart{
+        display: block;
+        padding: 0.25em;
+    }
+}   
+@media screen and (width>1440px){
+    .menu-item{
+        width: 20%;
+    }
+    .menu-item__img{
+        width: 16rem;
+        height: 16rem;
+        transform: translate(0, -70%);
+    }
+
+}   
 
 

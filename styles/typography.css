@@ -6,15 +6,15 @@
     /*Heading*/
     --font-heading: 'Vesper Libre', serif;
     /*Base values*/
-    --text-base-size: 1.25rem;
+    --text-base-size: 1rem;
 
     /* Type scale */
     --text-scale-ratio: 1.50;
     --text-scale-ratio-cta: 1.25;
     /* Web captions & References 20px*/
-    --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio));
+    --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio-cta));
     /* Web paragraph 24px*/
-    --text-md: calc(var(--text-base-size) * var(--text-scale-ratio));
+    --text-md: var(--text-base-size);
     /* Web CTA 30px*/
     --text-lg: calc(var(--text-base-size) * var(--text-scale-ratio-cta));
     /* Web Subheading 45px*/
@@ -46,7 +46,20 @@
     --text-base-size: 0.80rem;
     /* Mob Type Scale */
     --text-scale-ratio: 1.25;
-    --text-scale-ratio-cta: 1.2;        
+    --text-scale-ratio-cta: 1.2;  
+    
+      /* Mob captions & References 20px*/
+      --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio-cta));
+      /* Mob paragraph 24px*/
+      --text-md: calc(var(--text-base-size));
+      /* Mob CTA 30px*/
+      --text-lg: calc(var(--text-base-size) * var(--text-scale-ratio-cta));
+      /* Mob Subheading 45px*/
+      --text-xl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio));
+      /* Mob H2 67.5px*/
+      --text-xl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio));
+      /* Mob H1 101.3px*/
+      --text-xxl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
     }
 }
 

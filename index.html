@@ -20,21 +20,22 @@
 
 </head>
 <body>
-    <header>
-            <img src="images/LI-logo.png" alt="LI Logo">
+    <header class="stack-most-top">
+            <img src="images/LI-logo.png" alt="LI Logo" id="logo">
                 <ul id="navbar">
                     <li class="navbtn">About</li>
                     <li class="navbtn">Menu</li>
                     <li class="navbtn">Contact</li>
-                    <li class="navbtn">Cart</li>
+                    <li class="navbtn" id="cart"><img src="/UIDev-A3/images/icons/cart.svg" alt="Cart"></li>
+                    <li class="navbtn" id="hamburger"><img src="/UIDev-A3/images/icons/hamburger-menu_svgrepo.com.svg" alt="hamburger menu"></li>
                 </ul>
     </header>
     <main>
        
         <section id="hero">
             <div class="stack-top">
-                <h1>Experience Malaysian Cuisine<br> in a Modern Light</h1>
-                <p>Inspired by our Malaysian roots, Li looks to bring Malaysian produce and culture in a casual and innovative way</p>
+                <h1 class="hero__heading">Experience Malaysian Cuisine<br> in a Modern Light</h1>
+                <p class="hero__description">Inspired by our Malaysian roots, Li looks to bring Malaysian produce and culture in a casual and innovative way</p>
                 <a href="#" class="btn btn--hero btn-rounded font__cta ">Order now</a>
             </div>
             <!-- <img src="/UIDev-A3/images/Hero-image.png" alt="#" class="hero-img"> -->
@@ -42,59 +43,62 @@
             
             
     </section>
-    
         <section id="about" class="sidebar-container">
             <div class="about__cta sidebar">
-                <h2>About</h2>
-                <p>We are a Malaysian restaurant focused on local produce and culture in a modern and contemporary way.
+                <h2 class="about__cta__heading">About</h2>
+                <p class="about__cta__description">We are a Malaysian restaurant focused on local produce and culture in a modern and contemporary way.
     
                     Li opened in March 2015 in the heart of Damansara Jaya. Inspired by our Malaysian roots, Li looks to bring Malaysian produce and culture into the future in a casual and innovative way while respecting the past.
                     
                     Over the years our space has evolved into a modern Malaysian restaurant/wine bar featuring sharing meat dishes, vegetables from the market, and eclectic drinks sourced from our team.</p>
             </div>
                 <img src="/UIDev-A3/images/About-img.jpg" alt="Li workers engaged in a meeting" class="about__image not-sidebar">
-
-
-
-
         </section>
         <section id="menu">
-            <h2>Menu</h2>
+            <h2 class="menu__heading">Menu</h2>
+            <!-- Carousell -->
             <div class="carousell">
-                    <div class="menu-item__box">
-                        <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="House chicken rice bowl" class="menu-item__img stack-top">
-                        <div class="menu-item__text-box">
-                            <a class="font__cta">House chicken rice bowl</a>
-                            <p class="font__cta">RM 25</p>
-                        </div>
-
+                <img src="/UIDev-A3/images/icons/left-arrow.svg" alt="right arrow icon" class="carousell__arrow">
+                <article class="menu-item">
+                    <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="House chicken rice bowl" class="menu-item__img stack-top">
+                    <div class="menu-item__text">
+                        <a class="menu-item__text__name font__cta">House chicken rice bowl</a>
+                        <p class="menu-item__text__price font__cta">RM 25</p>
                     </div>
-                    <div class="menu-item__box">
-                        <img src="/UIDev-A3/images/menu/Housemade-Spam-Katsu.jpg" alt="Housemade Spam Katsu" class="menu-item__img stack-top">
-                        <div class="menu-item__text-box">
-                            <a class="font__cta">Housemade spam katsu burger</a> 
-                            <p class="font__cta">RM 29</p>
-                        </div>
-
+                        
+                </article>
+                <article class="menu-item mob-hidden">
+                    <img src="/UIDev-A3/images/menu/Housemade-Spam-Katsu.jpg" alt="Housemade Spam Katsu" class="menu-item__img stack-top">
+                    <div class="menu-item__text">
+                        <a class="menu-item__text__name font__cta">Housemade spam katsu burger</a> 
+                        <p class="menu-item__text__price font__cta">RM 29</p>
                     </div>
-                    <div class="menu-item__box">
-                        <img src="/UIDev-A3/images/menu/Chicken-Chop.png" alt="Chicken Chop" class="menu-item__img stack-top">
-                        <div class="menu-item__text-box">
-                            <a class="font__cta">Chicken chop</a>
-                            <p class="font__cta">RM 30</p>
-                        </div>
-
+                
+                </article>
+                <article class="menu-item mob-hidden">
+                    <img src="/UIDev-A3/images/menu/Chicken-Chop.png" alt="Chicken Chop" class="menu-item__img stack-top">
+                    <div class="menu-item__text">
+                        <a class="menu-item__text__name font__cta">Chicken chop</a>
+                        <p class="menu-item__text__price font__cta">RM 30</p>
                     </div>
+                        
+                </article>
+                <img src="/UIDev-A3/images/icons/right-arrow.svg" alt="right arrow icon" class="carousell__arrow">
+            </div>
+            <div class="carousell__pages">
+                <span class="carousell__pages__dot"></span>
+                <span class="carousell__pages__dot"></span> 
+                <span class="carousell__pages__dot"></span>
             </div>
         </section>
     </main>
     <footer>
-        <div class="footer--column">
-            <div class="footer__element">
+        <div class="footer__column">
+            <div class="footer__column__element">
                 <img src="/UIDev-A3/images/icons/location.svg" alt="Location icon" class="footer__icon">
                 <p>47, Jalan SS22/23. Damansara Jaya</p>
             </div>
-            <div class="footer__element">
+            <div class="footer__column__element">
                 <img src="/UIDev-A3/images/icons/Clock.svg" alt="Clock icon" class="footer__icon">
                 <p>Tue - Sun <br>
                     Lunch: 12pm - 3pm (last call 2.30pm)<br>
@@ -103,21 +107,22 @@
             </div>
         </div>
 
-        <div class="footer--column"   id="copyright">
-            <div class="footer__element">
+        <div class="footer__column"  id="copyright"  >
+            <div class="footer__column__element">
                 <p>&copy; Li Damansara Jaya 2023</p>
             </div>
         </div>
-        <div class="footer--column">
-            <div class="footer__element">
+
+        <div class="footer__column">
+            <div class="footer__column__element">
                 <img src="/UIDev-A3/images/icons/mail.svg" alt="email icon" class="footer__icon">
                 <p>eat@lidamansarajaya.com</p>
             </div>
-            <div class="footer__element">
-                <img src="/UIDev-A3/images/icons/mobile.svg" alt="mobbile icon" class="footer__icon">
+            <div class="footer__column__element">
+                <img src="/UIDev-A3/images/icons/mobile.svg" alt="mobile icon" class="footer__icon">
                 <p>+60377337692</p>
             </div>
-            <div class="footer__element">
+            <div class="footer__column__element">
                 <img src="/UIDev-A3/images/icons/Facebook.svg" alt="facebook icon" class="footer__icon">
                 <img src="/UIDev-A3/images/icons/instagram.svg" alt="instagram icon" class="footer__icon">
             </div>

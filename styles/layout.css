@@ -26,3 +26,11 @@
 .cluster > * {
     margin: 0.5rem;
 }
+
+.stack-top{
+    z-index: 9;
+}
+
+.stack-most-top{
+    z-index: 10;
+}
