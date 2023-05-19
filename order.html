@@ -29,6 +29,88 @@
                 <li class="navbtn" id="hamburger"><img src="/UIDev-A3/images/icons/hamburger-menu_svgrepo.com.svg" alt="hamburger menu"></li>
             </ul>
 </header>
+<main>
+    <section id="options">
+        <button class="btn">Takeaway</button>
+        <button class="btn">Delivery</button>
+    </section>
+    <section id="order">
+        <h1 class="order__title">Order Details</h1>
+        <form action="confirm.html" class="order__form">
+            <h3 class="form__heading">Name</h3>
+            <div class="form__elements">
+                <div class="form__elements__pair stack">
+                    <input class="form__elements__textbox" type="text" id="name" name="name" required minlength="2" pattern="[a-z|A-Z| |-]*"
+                    oninvalid="this.setCustomValidity('Please enter only letters, space, hyphen')"/>  
+                    <label for="name" class="form__elements__label">Full name</label>
+                </div>
+            </div>
+
+            <h3 class="form__heading">Contact</h3>
+            <div class="form__elements cluster ">
+                <div class="form__elements__pair stack form__elements__pair--forty">
+                    <input class="form__elements__textbox" type="tel" id="phone" name="phone" required pattern="(\(|\)|-|[0-9])*"
+                    oninvalid="this.setCustomValidity('Please enter only digits, brackets, hyphen')"/>
+                    <label for="phone" class="form__elements__label">Mobile Number</label>
+                </div>
+                <div class="form__elements__pair stack form__elements__pair--forty">
+                    <input class="form__elements__textbox" type="email" id="email" name="email" required>
+                    <label for="email" class="form__elements__label">Email</label>
+                </div>
+                
+
+            </div>
+
+            <h3 class="form__heading">Address</h3>
+            <div class="form__elements">
+                <div class="form__elements__pair stack">
+                    <input class="form__elements__textbox" type="text" id="address" name="address" required>
+                    <label for="address" class="form__elements__label">Street Address</label>  
+                </div>
+                <div class="form__elements__pair stack">
+                    <input class="form__elements__textbox" type="text" id="address" name="address">
+                    <label for="address" class="form__elements__label">Street Address Line 2</label>
+                </div>
+                <div class="form__elements cluster">
+                    <div class="form__elements__pair stack">
+                        <input class="form__elements__textbox" type="text" id="address" name="address" required>
+                        <label for="address" class="form__elements__label">City</label>
+                    </div>
+                    <div class="form__elements__pair stack">                
+                        <input class="form__elements__textbox" type="text" id="address" name="address" required>
+                        <label for="address" class="form__elements__label">State</label>
+                    </div>
+                    <div class="form__elements__pair stack">
+                        <input class="form__elements__textbox" type="text" id="address" name="address" required>
+                        <label for="address" class="form__elements__label">Postcode</label>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <h3 class="form__heading">Time</h3>
+            <div class="form__elements cluster">
+                <div class="form__elements__pair stack">
+                    <input class="form__elements__textbox" type="date" id="date" name="date" required/>
+                    <label for="date" class="form__elements__label">e.g 09/10/2023</label>
+                </div>
+
+                <div class="form__elements__pair stack">
+                    <input class="form__elements__textbox" type="time" id="time" name="time" value="11:00" step="900" required/>
+                    <label for="time" class="form__elements__label">e.g 1:00 PM</label>
+                </div>
+            </div>
+    
+            <div>
+                <label for="submit"class="btn btn--primary">Submit</label>
+            </div>
+    
+        </form>
+    </section>
+
+</main>
 <footer>
     <div class="footer__column">
         <div class="footer__column__element">

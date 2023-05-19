@@ -1,6 +1,6 @@
 @import url(spacing.css);
 .stack{
-    --space: 1.5rem;
+    /* --space: 1.5rem; */
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -12,20 +12,17 @@
 }
 
 .stack > * + * {
-    margin-top: var(--space-md)
+    margin-top: var(--space-sm)
 }
 
 .cluster{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    /* margin-bottom: 0.25rem; */
 }
 
-.cluster > * {
-    margin: 0.5rem;
-}
 
 .stack-top{
     z-index: 9;

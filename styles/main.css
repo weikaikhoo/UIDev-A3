@@ -15,9 +15,7 @@ body{
 a{
     text-decoration: none;
 }
-#hamburger{
-    display: none;
-}
+
 section{
     padding: 3%;
 }
@@ -27,7 +25,7 @@ header, footer{
     background-color: var(--color-cta);
     display: flex;
 }
-
+/* Header */
 header{
     flex-direction: row;
     padding: 3%;
@@ -90,6 +88,10 @@ footer{
     font-size: var(--text-lg);
 }
 
+#hamburger{
+    display: none;
+}
+
 #logo{
     width: 58px;
     height: 62px;
@@ -114,11 +116,9 @@ footer{
     font-weight: var(--font-semibold);
 }
 
-#about{
-    background-color: var(--color-sec-background);
-}
 
-/* Buttons */
+
+/* Button variations */
 .btn{
     text-align: center;
 	text-decoration: none;
@@ -174,8 +174,6 @@ footer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* overflow: hidden;
-    white-space: nowrap; */
 }
 
 .sidebar{
@@ -188,12 +186,12 @@ footer{
     flex-grow:999;
     min-width:40%;
     max-width: 60%;
-
 }
 
 /* About section */
 #about{
     padding: 0;
+    background-color: var(--color-sec-background);
 }
 .about__cta{
     padding: 3%;
@@ -213,6 +211,7 @@ footer{
     flex-direction: column;
     gap:2em;
 }
+/* Menu carousell showing list of products */
 .carousell{
     align-items: center;
     justify-content: center;
@@ -221,17 +220,7 @@ footer{
     /* flex-wrap: wrap; */
     gap: 2rem;
 }
-
-.menu-item__img{
-    width: 11rem;
-    height: 11rem;
-    border-radius: 50%;
-    object-fit:cover;
-    position: absolute;
-    bottom: 10%;
-    transform: translate(0%, -80%);
-}
-
+/* Individual Menu item module */
 .menu-item{
     position: relative;
     display: flex;
@@ -253,12 +242,23 @@ footer{
     margin-top: 4rem;
 }
 
+.menu-item__img{
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    object-fit:cover;
+    position: absolute;
+    bottom: 10%;
+    transform: translate(0%, -80%);
+}
+
 .menu-item__text{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 0.5em;
 }
+
 .menu-item__text__name{
     height: 4em;
     display: flex;
@@ -267,6 +267,7 @@ footer{
     align-items: flex-end;
     width: auto;
 }
+/* The 3 circles below the menu items */
 .carousell__pages{
     display: flex;
     flex-direction: row;
@@ -290,12 +291,59 @@ footer{
     background-color: var(--color-cta);
 }
 
+/* Order Page */
+#options{
+    padding: 1% 3%;
+}
+.order__form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    color: var(--color-primary-text);
+}
+.form__heading{
+    font-size: var(--text-lg);
+}
+.form__elements{
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+.form__elements__pair{
+    gap: 0.25rem;
+}
+.form__elements__label{
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-sm);
+    opacity: 80%;
+}
+.form__elements__textbox{
+    border-radius: 0.5em;
+    border:none;
+    background-color: var(--color-hover);
+    padding: 0.5em;
+    height:1.4rem;
+    line-height: var(--body-line-height);
+}
+.form__elements__pair--forty{
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+/* Viewport between 768px -> 1023px */
 @media screen and (min-width: 768px) and (max-width:1023px) {
+    /* All pages */
     #logo{
         scale: 0.75;
     }
+    /* End of All pages */
+    /* Homepage */
     .carousell{
         padding-top: 3em;
+    }
+    .carousell__arrow{
+        display: block;
+        height:2rem;
     }
     .menu-item{
         width:25%;
@@ -305,28 +353,45 @@ footer{
         width: 7em;
         height: 7em;
     }
-    .carousell__arrow{
-        display: block;
-        height:2rem;
-    }
+    /* End of homepage */
 }
-/* Tablet and smaller */
+/* Viewport between Tablet and mobile */
 @media screen and (width < 768px){
+    /* All pages */
     #logo{
         scale: 0.5;
     }
+    footer{
+        flex-direction: column;
+        gap: 1.25em;
+        text-align: center;
+    }
+    #copyright{
+        align-self: center;
+    }
+    .footer__column{
+        justify-content: center;
+        align-items: center;        
+    }
+    .footer__column:nth-of-type(1){order: 1;}
+    .footer__column:nth-of-type(2){order: 3;}
+    .footer__column:nth-of-type(3){order: 2;}
+    }   
+    /* End of All pages */
+    /* Homepage */
+    .about__cta{
+        max-width: 100%;
+    }
+    .about__image{
+        max-width: 100%;
+    }
+
     #menu{
         gap:1em;
     }
     .carousell{
         gap: 2em;
         padding-top: 1em;
-    }
-    .about__cta{
-        max-width: 100%;
-    }
-    .about__image{
-        max-width: 100%;
     }
     .menu-item{
         width: auto;
@@ -344,40 +409,33 @@ footer{
     .mob-hidden{
         display: none;
     }
-    footer{
-        flex-direction: column;
-        gap: 1.25em;
-        text-align: center;
-    }
-    #copyright{
-        align-self: center;
-    }
-    .footer__column{
-        justify-content: center;
-        align-items: center;        
-    }
-    .footer__column:nth-of-type(1){order: 1;}
-    .footer__column:nth-of-type(2){order: 3;}
-    .footer__column:nth-of-type(3){order: 2;}
-}
+    /* End of homepage */
 
+/* Viewport for mobile */
 @media screen and (width<=425px){
-    #menu, #about, #hero{
-        text-align: center;
-    }
+    /* All Pages */
     .navbtn{
         display: none;
     }
+
     #hamburger{
         display: block;
         padding: 0.25em;
     }
+
     #cart{
         display: block;
         padding: 0.25em;
     }
+    /* End of All pages */
+    /* Homepage */
+    #menu, #about, #hero{
+        text-align: center;
+    }
 }   
+/* Viewport larger than 1440px */
 @media screen and (width>1440px){
+    /* Homepage -> Menu section */
     .menu-item{
         width: 20%;
     }
@@ -386,7 +444,7 @@ footer{
         height: 16rem;
         transform: translate(0, -70%);
     }
-
+    /* End of Homepage -> Menu section */
 }   
 
 
