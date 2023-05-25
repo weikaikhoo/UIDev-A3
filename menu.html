@@ -19,24 +19,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-        <header class="stack-most-top">
-            <img src="images/LI-logo.png" alt="LI Logo" id="logo">
-                <ul id="navbar">
-                    <li class="navbtn">About</li>
-                    <li class="navbtn">Menu</li>
-                    <li class="navbtn">Contact</li>
-                    <li class="navbtn" id="cart"><img src="/UIDev-A3/images/icons/cart.svg" alt="Cart"></li>
-                    <li class="navbtn" id="hamburger"><img src="/UIDev-A3/images/icons/hamburger-menu_svgrepo.com.svg" alt="hamburger menu"></li>
-                </ul>
+    <header class="stack-most-top">
+        <a class="navbtn__link" href="index.html"><img src="images/LI-logo.png" alt="LI Logo" id="logo"></a>
+        <ul id="navbar">
+            <li class="navbtn"><a class="navbtn__link" href="#about">About</a></li>
+            <li class="navbtn"><a class="navbtn__link" href="#menu">Menu</a></li>
+            <li class="navbtn"><a class="navbtn__link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="navbar-icons cluster">
+            <img class="navbtn" id="cart" src="/UIDev-A3/images/icons/cart.svg" alt="Cart">
+            <img class="navbtn" id="hamburger" onclick="showNavbar()"  src="/UIDev-A3/images/icons/hamburger-menu_svgrepo.com.svg" alt="hamburger menu">
+        </div>
     </header>
-    <footer>
+    <main>
+        <section class="title-bar cluster">
+            <h1>Menu</h1>
+            <div><img id="filter" class="navbtn" src="/UIDev-A3/images/icons/Filter.svg" alt="filter icon"></div>
+        </section>
+        <section id="snacks">
+            <h2>Snacks</h2>
+            <div class="grid-container">
+                    <article class="menu-item grid__item grid__item--1">
+                        <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="House chicken rice bowl" class="menu-item__img stack-top">
+                        <div class="menu-item__text">
+                            <a class="menu-item__text__name font__cta">Provision's sourdough, kaya + butter</a>
+                            <p class="menu-item__text__price font__cta">RM 10</p>
+                        </div>
+                    </article>
+
+                    <article class="menu-item grid__item grid__item--2">
+                        <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="House chicken rice bowl" class="menu-item__img stack-top">
+                        <div class="menu-item__text">
+                            <a class="menu-item__text__name font__cta">Pork toast, chilli mayo</a>
+                            <p class="menu-item__text__price font__cta">RM 17</p>
+                        </div>
+                    </article>
+
+
+                    <article class="menu-item grid__item grid__item--3">
+                        <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="House chicken rice bowl" class="menu-item__img stack-top">
+                        <div class="menu-item__text">
+                            <a class="menu-item__text__name font__cta">Dumplings of the day</a>
+                            <p class="menu-item__text__price font__cta">RM 16</p>
+                        </div>
+                    </article>
+
+                    <article class="menu-item grid__item grid__item--4">
+                        <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="House chicken rice bowl" class="menu-item__img stack-top">
+                        <div class="menu-item__text">
+                            <a class="menu-item__text__name font__cta">House chicken rice bowl</a>
+                            <p class="menu-item__text__price font__cta">RM 25</p>
+                        </div>
+                    </article>
+
+                    <article class="menu-item grid__item grid__item--5">
+                        <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="House chicken rice bowl" class="menu-item__img stack-top">
+                        <div class="menu-item__text">
+                            <a class="menu-item__text__name font__cta">House chicken rice bowl</a>
+                            <p class="menu-item__text__price font__cta">RM 25</p>
+                        </div>
+                    </article>
+            </div>
+        </section>
+                <section id="mains">
+            <h2>Mains</h2>
+            <div class="grid-container">
+                <div class="grid__item grid__item--1">
+
+                </div>
+            </div>
+        </section>
+        <section id="desserts">
+            <h2>Desserts</h2>
+            <div class="grid-container">
+                <div class="grid__item grid__item--1">
+
+                </div>
+            </div>  
+        </section>
+    </section>
+    <section id="beverages">
+        <h2>Beverages</h2>
+        <div class="grid-container">
+            <div class="grid__item grid__item--1">
+
+            </div>
+        </div>
+    </main>
+    <footer id="contact">
         <div class="footer__column">
             <div class="footer__column__element">
-                <img src="/UIDev-A3/images/icons/location.svg" alt="Location icon" class="footer__icon">
+                <img src="/UIDev-A3/images/icons/location.svg" alt="Location icon" class="footer__column__icon">
                 <p>47, Jalan SS22/23. Damansara Jaya</p>
             </div>
             <div class="footer__column__element">
-                <img src="/UIDev-A3/images/icons/Clock.svg" alt="Clock icon" class="footer__icon">
+                <img src="/UIDev-A3/images/icons/Clock.svg" alt="Clock icon" class="footer__column__icon">
                 <p>Tue - Sun <br>
                     Lunch: 12pm - 3pm (last call 2.30pm)<br>
                     Dinner: 6pm - 11pm (last call 10pm)
@@ -52,16 +129,16 @@
 
         <div class="footer__column">
             <div class="footer__column__element">
-                <img src="/UIDev-A3/images/icons/mail.svg" alt="email icon" class="footer__icon">
+                <img src="/UIDev-A3/images/icons/mail.svg" alt="email icon" class="footer__column__icon">
                 <p>eat@lidamansarajaya.com</p>
             </div>
             <div class="footer__column__element">
-                <img src="/UIDev-A3/images/icons/mobile.svg" alt="mobile icon" class="footer__icon">
+                <img src="/UIDev-A3/images/icons/mobile.svg" alt="mobile icon" class="footer__column__icon">
                 <p>+60377337692</p>
             </div>
             <div class="footer__column__element">
-                <img src="/UIDev-A3/images/icons/Facebook.svg" alt="facebook icon" class="footer__icon">
-                <img src="/UIDev-A3/images/icons/instagram.svg" alt="instagram icon" class="footer__icon">
+                <img src="/UIDev-A3/images/icons/Facebook.svg" alt="facebook icon" class="footer__column__icon">
+                <img src="/UIDev-A3/images/icons/instagram.svg" alt="instagram icon" class="footer__column__icon">
             </div>
         </div>
     </footer>

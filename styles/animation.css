@@ -1,0 +1,11 @@
+@keyframes slidein{
+    from{ 
+        margin-left: 100%;
+        width: 0%;
+    }
+    to{ 
+        font-size: 100%;
+        margin-left: 0%;
+        width: 40%;
+    }
+}
