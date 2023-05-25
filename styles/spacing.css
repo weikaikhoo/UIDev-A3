@@ -6,7 +6,11 @@
     --space-sm: calc(var(--baseline) / 2);
     --space-md: var(--baseline);
     --space-lg: calc(var(--baseline) * 2);
-    --space-xl: calc(var(--baseline) *3);
+    --space-xl: calc(var(--baseline) * 3);
+    --space-xxl: calc(var(--baseline) * 4);
+    --space-xxxl: calc(var(--baseline) * 5);
+    --space-4xl: calc(var(--baseline) * 6);
+    --space-5xl: calc(var(--baseline) * 7);
 
     /* line-height */
     --heading-line-height: 1.2;

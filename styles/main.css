@@ -69,6 +69,12 @@ footer{
 }
 
 /* Navbar */
+.nav-sidebar{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 40vh;
+}
 #navbar{
     display: flex;
     flex-direction: row;
@@ -228,6 +234,7 @@ footer{
 .carousell__arrow{
     align-self: center;
     justify-self: center;
+    cursor: pointer;
 }
 /* Individual Menu item module */
 .menu-item{
@@ -248,6 +255,11 @@ footer{
     padding: 0.4em;
     padding-top: 10%;
     margin-top: var(--space-xl);
+    cursor: pointer;
+}
+
+.menu-item--more{
+    display: none;
 }
 
 .menu-item__img{
@@ -258,6 +270,7 @@ footer{
     position: absolute;
     bottom: 20%;
     transform: translate(0%, -60%);
+    cursor: pointer;
 }
 .mob-hidden{
     display: flex;
@@ -281,8 +294,15 @@ footer{
 .menu-item__text__price{
     display: flex;
     flex-direction: column;
-    margin:0;
+    margin: 0;
 }
+
+.see-more-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 
 /* The 3 circles below the menu items */
 .carousell__pages{
@@ -372,7 +392,7 @@ footer{
     .menu-item__img{
         width: 6em;
         height: 6em;
-        transform: translate(0%, -70%);
+        transform: translate(0%, -75%);
     }
     /* End of homepage */
 }
@@ -430,6 +450,11 @@ footer{
 /* Viewport for mobile */
 @media screen and (width<=425px){
     /* All Pages */
+    .nav-sidebar{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
     #hamburger, #cart{
         display: block;
         padding: 0.25em;
@@ -439,7 +464,7 @@ footer{
         flex-direction: column;
         align-items: flex-end;
         padding: 3% 3% 0 0;
-        position: fixed;
+        position:fixed;
         right:0%;
         top: 0%;
         padding-top: 30%;
@@ -447,14 +472,22 @@ footer{
 
         background-color: var(--color-cta);
         width: 40%;
-        height: 100%;
+        /* height: 100%; */
         gap: 3%;
         display: none;
 
         animation: slidein;
-        animation-duration: 0.7s;
+        animation-duration: 0.9s;
         transition: 0.7s ease-in-out;
     }
+    
+
+    .navbtn{
+        animation: slidein;
+        animation-duration: 0.9s;
+        transition: 0.7s ease-in-out;
+    }
+
     footer{
         padding: 10% 3%;
     }
