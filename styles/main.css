@@ -449,17 +449,24 @@ footer{
 }
 /* Viewport for mobile */
 @media screen and (width<=425px){
-    /* All Pages */
-    .nav-sidebar{
-        display: flex;
-        flex-direction: column;
-        width: 40%;
+    body, html{
+        height: 100%;
     }
+    /* All Pages */
     #hamburger, #cart{
         display: block;
         padding: 0.25em;
         z-index: 10;
     }
+    #hamburger.stick{
+        position: fixed;
+        right: 3%;
+    }
+    #cart.stick{
+        position: fixed;
+        right: 17.75%;
+    }
+
     #navbar{
         flex-direction: column;
         align-items: flex-end;
@@ -469,6 +476,7 @@ footer{
         top: 0%;
         padding-top: 30%;
         z-index: 10;
+        height: 100%;
 
         background-color: var(--color-cta);
         width: 40%;
@@ -476,17 +484,17 @@ footer{
         gap: 3%;
         display: none;
 
-        animation: slidein;
+        /* animation: slidein; 
         animation-duration: 0.9s;
-        transition: 0.7s ease-in-out;
+        transition: 0.7s ease-in-out; */
     }
     
 
-    .navbtn{
+    /* .navbtn{
         animation: slidein;
         animation-duration: 0.9s;
         transition: 0.7s ease-in-out;
-    }
+    } */
 
     footer{
         padding: 10% 3%;
