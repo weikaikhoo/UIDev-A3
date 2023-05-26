@@ -68,29 +68,38 @@ footer{
     align-self: flex-end;
 }
 
-/* Navbar */
-.nav-sidebar{
+/* New Navbar */
+.navbar{
+    min-height: 5em;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    height: auto;
-    width: 40vh;
-}
-#navbar{
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
+    justify-content: space-around;
     align-items: center;
 }
-.navbar-icons{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+#logo{
+    width: 58px;
+    height: 62px;
+    cursor: pointer;
+    margin-right: auto;
 }
+
+.nav-menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4em;
+}
+
+#cart, #hamburger{
+    margin-left:4em;
+}
+
 .navbtn{
     /* Auto layout */
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     padding: 0.5em 1em;
     gap: 0.5rem;
 
@@ -101,26 +110,73 @@ footer{
     transition: 0.7s ease;
 }
 
-.navbtn__link{
-    text-decoration: none;
+.nav-link{
     color: var(--color-hover);
+    transition: 0.7s ease;
+    text-decoration: none;
 }
 
-.navbtn:hover,.navbtn__link:hover, #hamburger, #cart{
+.navbtn:hover,.nav-link:hover, #hamburger, #cart{
     color: var(--color-background);
     cursor:pointer;
 }
 
 #hamburger{
     display: none;
-}
-
-#logo{
-    width: 58px;
-    height: 62px;
     cursor: pointer;
+    width: 2em;
 }
 
+.bar{
+    display: block;
+    width: 2em;
+    height: 0.2em;
+    margin: 30% 0;
+    border-radius: 2em;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+    background-color: var(--color-hover);
+}
+/* Navbar switches to hamburger when viewport < 768px */
+@media(max-width:768px){
+    #hamburger{
+        display: block;
+    }
+    /* #hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    #hamburger.active .bar:nth-child(1){
+        transform: translateY(1em) rotate(45deg);
+    }
+    #hamburger.active .bar:nth-child(3){
+        transform: translateY(-1em) rotate(-45deg);
+    } */
+    #hamburger, #cart{
+        z-index: 10;
+    }
+    .nav-menu{
+        z-index: 10;
+        position:fixed;
+        right: -100%;
+        /* top:70px; */
+        top: 0;
+        padding-top: 20%;
+        gap:3%;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: var(--color-cta);
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .nav-item{
+        margin: 1em 0;
+    }
+    .nav-menu.active{
+        right:0;
+    }
+}
 /* Hero section */
 #hero{
     display: flex;

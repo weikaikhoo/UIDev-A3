@@ -1,46 +1,21 @@
 window.onload = function(){
+
     // Hamburger menu toggle
     const hamburger = document.querySelector("#hamburger");
-    const navbar = document.querySelector("#navbar");
-    const cart = document.querySelector("#cart");
+    const navMenu = document.querySelector(".nav-menu");
 
-    if(window.innerWidth < 768){
-        // document.write("blashkjhdskfs");
-        hamburger.addEventListener("click", function() {
-            if (navbar.style.display == "flex"){
-                navbar.style.display = "none";
-                hamburger.classList.remove("stick");
-                cart.classList.remove("stick");
-            }
-            else{
-                navbar.style.display = "flex";
-                // In order to stick the cart to the sidebar
-                hamburger.classList.toggle("stick");
-                cart.classList.toggle("stick");
-            }
-        });
-        //   Scrolling effect for anchor points
-        document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
-            anchor.addEventListener("click", function(e){
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute("href"));
-                    if (target){
-                        target.scrollIntoView({
-                            behavior: "smooth"
-                        });
-                    // When the anchors are clicked upon
-                    navbar.style.display ="none";
-                    hamburger.classList.toggle("stick");
-                    cart.classList.toggle("stick");
-                    }
-            });
-        });                
-    }
+    hamburger.addEventListener("click", () =>{
+        // hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active")
+    })
+
+    document.querySelectorAll(".nav-link").forEach(n => 
+        n.addEventListener("click", () =>{
+            // hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+    }))
 
 
-if (window.innerWidth > 768){
-    // document.write("blashkjhdskfs");
-    navbar.style.display ="flex";
     //   Scrolling effect for anchor points
     document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
         anchor.addEventListener("click", function(e){
@@ -51,15 +26,18 @@ if (window.innerWidth > 768){
                         behavior: "smooth"
                     });
                 // When the anchors are clicked upon
-                // navbar.style.display ="flex";
+                // navbar.style.display ="none";
                 // hamburger.classList.toggle("stick");
                 // cart.classList.toggle("stick");
                 }
         });
-    });    
+    });                
 }
 
-}
+
+
+
+
 
 
 
