@@ -32,6 +32,24 @@
     z-index: 10;
 }
 
+/* sidebar */
+.sidebar-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sidebar{
+    flex-basis: 40rem;
+    flex-grow: 1;
+}
+
+.not-sidebar{
+    flex-basis:0;
+    flex-grow:4;
+    min-width:40%;
+}
+
 /* grid layout */
 .grid-container{
     display: grid;
@@ -69,7 +87,17 @@
     grid-column: 4/5;
 }
 
+/* Order Page Grid */
+.grid-container--order{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "options background-fill"
+    "order order-cart";
+}
 
+/* Screen size larger than 1440px */
 @media screen and (min-width: 1440px){
     .grid-container{
         grid-template-columns: repeat(5, 1fr);
@@ -122,3 +150,5 @@
         grid-column: 1/2;
     }
 }
+
+

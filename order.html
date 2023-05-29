@@ -20,97 +20,267 @@
 </head>
 <body>
     <header class="stack-most-top">
-        <a class="navbtn__link" href="index.html"><img src="images/LI-logo.png" alt="LI Logo" id="logo"></a>
-        <ul id="navbar">
-            <li class="navbtn"><a class="navbtn__link" href="#about">About</a></li>
-            <li class="navbtn"><a class="navbtn__link" href="#menu">Menu</a></li>
-            <li class="navbtn"><a class="navbtn__link" href="#contact">Contact</a></li>
-        </ul>
-        <div class="navbar-icons cluster">
-            <img class="navbtn" id="cart" src="/UIDev-A3/images/icons/cart.svg" alt="Cart">
-            <img class="navbtn" id="hamburger" onclick="showNavbar()"  src="/UIDev-A3/images/icons/hamburger-menu_svgrepo.com.svg" alt="hamburger menu">
-        </div>
-</header>
-<main>
-    <section id="options">
-        <button class="btn">Takeaway</button>
-        <button class="btn">Delivery</button>
-    </section>
-    <section id="order">
-        <h1 class="order__title">Order Details</h1>
-        <form action="confirm.html" class="order__form">
-            <h3 class="form__heading">Name</h3>
-            <div class="form__elements">
-                <div class="form__elements__pair stack">
-                    <input class="form__elements__textbox" type="text" id="name" name="name" required minlength="2" pattern="[a-z|A-Z| |-]*"
-                    oninvalid="this.setCustomValidity('Please enter only letters, space, hyphen')"/>  
-                    <label for="name" class="form__elements__label">Full name</label>
-                </div>
+        <nav class="navbar">
+            <a id="logo" class="nav-link nav-branding" href="index.html"><img src="images/LI-logo.png" alt="LI Logo"></a>
+            <ul class="nav-menu">
+                <li class="nav-item navbtn">
+                    <a href="../UIDev-A3/index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item navbtn">
+                    <a href="../UIDev-A3/menu.html" class="nav-link">Menu</a>
+                </li>
+                <li class="nav-item navbtn">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div id="cart">
+                <img class="navbtn" id="cart--icon" src="/UIDev-A3/images/icons/cart.svg" alt="Cart">
             </div>
+            <div id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+<main>
+    <div id="order-grid" class="grid-container--order">
+        <!-- Section for buttons -->
+        <section id="options">
+            <button class="btn">Takeaway</button>
+            <button class="btn">Delivery</button>
+        </section>
 
-            <h3 class="form__heading">Contact</h3>
-            <div class="form__elements cluster ">
-                <div class="form__elements__pair stack form__elements__pair--forty">
-                    <input class="form__elements__textbox" type="tel" id="phone" name="phone" required pattern="(\(|\)|-|[0-9])*"
-                    oninvalid="this.setCustomValidity('Please enter only digits, brackets, hyphen')"/>
-                    <label for="phone" class="form__elements__label">Mobile Number</label>
+        <!-- Blank section for background colour -->
+        <section class="space-fill"></section>
+
+        <!-- Section for order details and payment -->
+        <section id="order">
+            <!-- Contact Details -->
+            <h2 class="order__title">Order Details</h2>
+            <form action="confirm.html" class="order__form">
+                <h3 class="form__heading">Name</h3>
+                <div class="form__elements">
+                    <div class="form__elements__pair stack">
+                        <!-- Name -->
+                        <input class="form__elements__textbox name" 
+                        type="text"  
+                        name="name" 
+                        minlength="2" 
+                        required pattern="[a-z|A-Z| |-]*"
+                        oninvalid="this.setCustomValidity('Please enter only letters, space, hyphen')"/>  
+                        <label for="name" class="form__elements__label">Full name</label>
+                    </div>
                 </div>
-                <div class="form__elements__pair stack form__elements__pair--forty">
-                    <input class="form__elements__textbox" type="email" id="email" name="email" required>
-                    <label for="email" class="form__elements__label">Email</label>
+    
+                <h3 class="form__heading">Contact</h3>
+                <div class="form__elements cluster ">
+                    <!-- Mobile Number -->
+                    <div class="form__elements__pair stack form__elements__pair--forty">
+                        <input class="form__elements__textbox phone" 
+                        type="tel" 
+                        name="phone" 
+                        required pattern="(\(|\)|-|[0-9])*"
+                        oninvalid="this.setCustomValidity('Please enter only digits, brackets, hyphen')"/>
+                        <label for="phone" class="form__elements__label">Mobile Number</label>
+                    </div>
+                    <!-- Email -->
+                    <div class="form__elements__pair stack form__elements__pair--forty">
+                        <input class="form__elements__textbox email" 
+                        type="email" 
+                        name="email" required>
+                        <label for="email" class="form__elements__label">Email</label>
+                    </div>
+                </div>
+    
+                <h3 class="form__heading">Address</h3>
+                <div class="form__elements">
+                    <!-- Street Address Line 1 -->
+                    <div class="form__elements__pair stack">
+                        <input class="form__elements__textbox address" 
+                        type="text" 
+                        name="address" required>
+                        <label for="address" class="form__elements__label">Street Address</label>  
+                    </div>
+                    <div class="form__elements__pair stack">
+                        <!-- Street Address Line 2 -->
+                        <input class="form__elements__textbox address" 
+                        type="text" 
+                        name="address">
+                        <label for="address" class="form__elements__label">Street Address Line 2</label>
+                    </div>
+                    <div class="form__elements cluster">
+                        <!-- City -->
+                        <div class="form__elements__pair stack address">
+                            <input class="form__elements__textbox" 
+                            type="text"  
+                            name="address" required>
+                            <label for="address" class="form__elements__label">City</label>
+                        </div>
+                        <!-- State -->
+                        <div class="form__elements__pair stack">                
+                            <input class="form__elements__textbox address" 
+                            type="text" 
+                            name="address" required>
+                            <label for="address" class="form__elements__label">State</label>
+                        </div>
+                        <!-- Postcode -->
+                        <div class="form__elements__pair stack">
+                            <input class="form__elements__textbox address" 
+                            type="text" 
+                            name="address" required>
+                            <label for="address" class="form__elements__label">Postcode</label>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <h3 class="form__heading">Time</h3>
+                <div class="form__elements cluster">
+                    <!-- Date -->
+                    <div class="form__elements__pair stack">
+                        <input class="form__elements__textbox date" 
+                        type="date"  
+                        name="date" required/>
+                        <label for="date" class="form__elements__label">Date</label>
+                    </div>
+                    <!-- Time -->
+                    <div class="form__elements__pair stack">
+                        <input class="form__elements__textbox time" 
+                        type="time"  
+                        name="time" 
+                        value="11:00" 
+                        step="900" required/>
+                        <label for="time" class="form__elements__label">Time</label>
+                    </div>
+                </div>
+        
+                <!-- Payment section -->
+                <section id="payment">
+                    <h2>Payment</h2>
+                    <div class="payment-option">
+                        <div class="payment-option__header" id="option__header-creditcard">
+                            <h3 class="form__heading--payment">Credit/Debit card</h3>
+                            <input class="payment-option__radio" 
+                            id="radio--creditcard"
+                            type="radio" 
+                            name="radio" 
+                            value="credit-card">
+                        </div>
+                        <!-- Extra details with the payment options e.g Name/Card number -->
+                        <div class="payment-option__details" id="creditcard-details">
+                            <!-- Card Holder's Name -->
+                            <div class="form__elements__pair stack">
+                                <input class="form__elements__textbox form__elements__textbox--payment name" 
+                                type="text" 
+                                name="name" 
+                                required minlength="2" pattern="[a-z|A-Z| |-]*"
+                                oninvalid="this.setCustomValidity('Please enter only letters, space, hyphen')"/>  
+                                <label for="name" class="form__elements__label">Card Holder's Name</label>
+                            </div>
+                            <!-- Card Number -->
+                            <div class="form__elements__pair stack form__elements__pair--forty">
+                                <input class="form__elements__textbox form__elements__textbox--payment phone" 
+                                type="tel" 
+                                name="phone" 
+                                required pattern="(\(|\)|-|[0-9])*"
+                                oninvalid="this.setCustomValidity('Please enter only digits, brackets, hyphen')"/>
+                                <label for="phone" class="form__elements__label">Card Number</label>
+                            </div>
+                            <!-- Expiry Date & CVC -->   
+                            <div class="form__elements cluster ">
+                                <!-- Expiry Date -->
+                                <div class="form__elements__pair stack">
+                                    <input class="form__elements__textbox form__elements__textbox--payment date" 
+                                    type="month" 
+                                    name="date" 
+                                    required pattern="\d{0}-\d{2}-\d{2}"/>
+                                    <label for="date" class="form__elements__label">Expiry Date</label>
+                                </div>
+                                <!-- CVC -->
+                                <div class="form__elements__pair stack form__elements__pair--forty">
+                                    <input class="form__elements__textbox form__elements__textbox--payment cvc" 
+                                    type="password" 
+                                    name="CVC" 
+                                    required pattern="(\(|\)|-|[0-9])*"
+                                    oninvalid="this.setCustomValidity('Please enter only digits, brackets, hyphen')"/>
+                                    <label for="CVC" class="form__elements__label">CVC</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Paypal -->
+                    <div class="payment-option">
+                        <div class="payment-option__header">
+                            <h3 class="form__heading--payment">Paypal</h3>
+                            <input class="payment-option__radio" 
+                            id="radio--paypal"
+                            type="radio" 
+                            name="radio" 
+                            value="paypal">
+                        </div>
+                    </div>
+                    <!-- Google Pay -->
+                    <div class="payment-option">
+                        <div class="payment-option__header">
+                            <h3 class="form__heading--payment">Google Pay</h3>
+                            <input class="payment-option__radio" 
+                            id="radio--googlepay"
+                            type="radio" 
+                            name="radio" 
+                            value="googlePay">
+                        </div>
+                    </div>                
+                </section>
+    
+    
+                <!-- Submit Form button -->
+                <div>
+                    <label for="submit"class="btn btn--primary">Checkout</label>
+                </div>
+        
+            </form>
+        </section>
+
+        <!-- Section showing items ordered -->
+        <section id="order-cart">
+            <h2>Order Summary</h2>
+            <div class="receipt">
+                <!-- Item 1 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="House chicken rice bowl" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">House chicken rice bowl</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                    </div>
                 </div>
                 
-
-            </div>
-
-            <h3 class="form__heading">Address</h3>
-            <div class="form__elements">
-                <div class="form__elements__pair stack">
-                    <input class="form__elements__textbox" type="text" id="address" name="address" required>
-                    <label for="address" class="form__elements__label">Street Address</label>  
-                </div>
-                <div class="form__elements__pair stack">
-                    <input class="form__elements__textbox" type="text" id="address" name="address">
-                    <label for="address" class="form__elements__label">Street Address Line 2</label>
-                </div>
-                <div class="form__elements cluster">
-                    <div class="form__elements__pair stack">
-                        <input class="form__elements__textbox" type="text" id="address" name="address" required>
-                        <label for="address" class="form__elements__label">City</label>
-                    </div>
-                    <div class="form__elements__pair stack">                
-                        <input class="form__elements__textbox" type="text" id="address" name="address" required>
-                        <label for="address" class="form__elements__label">State</label>
-                    </div>
-                    <div class="form__elements__pair stack">
-                        <input class="form__elements__textbox" type="text" id="address" name="address" required>
-                        <label for="address" class="form__elements__label">Postcode</label>
+                <!-- Item 2 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="Spam Katsu Burger" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">Spam Katsu Burger</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
                     </div>
                 </div>
 
-
-
-            </div>
-
-            <h3 class="form__heading">Time</h3>
-            <div class="form__elements cluster">
-                <div class="form__elements__pair stack">
-                    <input class="form__elements__textbox" type="date" id="date" name="date" required/>
-                    <label for="date" class="form__elements__label">e.g 09/10/2023</label>
-                </div>
-
-                <div class="form__elements__pair stack">
-                    <input class="form__elements__textbox" type="time" id="time" name="time" value="11:00" step="900" required/>
-                    <label for="time" class="form__elements__label">e.g 1:00 PM</label>
+                <!-- Item 3 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="Coconut Panna Cotta" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">Coconut panna cotta</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                    </div>  
                 </div>
             </div>
-    
-            <div>
-                <label for="submit"class="btn btn--primary">Submit</label>
+            <!-- Total Price of Items -->
+            <div class="cluster receipt__price">
+                <p>Total</p>
+                <p>RM 74</p>
             </div>
-    
-        </form>
-    </section>
+        </section>
+    </div>
+
 
 </main>
 <footer id="contact">

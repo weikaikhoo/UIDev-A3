@@ -25,13 +25,28 @@ window.onload = function(){
                     target.scrollIntoView({
                         behavior: "smooth"
                     });
-                // When the anchors are clicked upon
-                // navbar.style.display ="none";
-                // hamburger.classList.toggle("stick");
-                // cart.classList.toggle("stick");
                 }
         });
-    });                
+    }); 
+    
+    // Expanding the payment option
+    const radioPayment = document.querySelectorAll(".payment-option__radio");
+    const radioCreditCard = document.querySelector("#radio--creditcard");
+    const paymentDetailsCredit = document.querySelector("#creditcard-details");
+    const paymentHeaderCredit = document.querySelector("#option__header-creditcard");
+
+    radioPayment.forEach(function(radio){
+        radio.addEventListener("click", function(){
+            if(radioCreditCard.checked){
+                paymentDetailsCredit.classList.add("active");
+                paymentHeaderCredit.classList.add("active");
+            }
+            else{
+                paymentDetailsCredit.classList.remove("active");
+                paymentHeaderCredit.classList.remove("active");
+            }
+        });
+    });
 }
 
 

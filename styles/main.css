@@ -137,46 +137,7 @@ footer{
     transition:all 0.3s ease-in-out;
     background-color: var(--color-hover);
 }
-/* Navbar switches to hamburger when viewport < 768px */
-@media(max-width:768px){
-    #hamburger{
-        display: block;
-    }
-    /* #hamburger.active .bar:nth-child(2){
-        opacity: 0;
-    }
-    #hamburger.active .bar:nth-child(1){
-        transform: translateY(1em) rotate(45deg);
-    }
-    #hamburger.active .bar:nth-child(3){
-        transform: translateY(-1em) rotate(-45deg);
-    } */
-    #hamburger, #cart{
-        z-index: 10;
-    }
-    .nav-menu{
-        z-index: 10;
-        position:fixed;
-        right: -100%;
-        /* top:70px; */
-        top: 0;
-        padding-top: 20%;
-        gap:3%;
-        flex-direction: column;
-        justify-content: flex-start;
-        background-color: var(--color-cta);
-        width: 40%;
-        height: 100%;
-        text-align: center;
-        transition: 0.3s;
-    }
-    .nav-item{
-        margin: 1em 0;
-    }
-    .nav-menu.active{
-        right:0;
-    }
-}
+
 /* Hero section */
 #hero{
     display: flex;
@@ -247,23 +208,7 @@ footer{
     border: var(--color-cta) 3px solid;
 }
 
-/* sidebar */
-.sidebar-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
 
-.sidebar{
-    flex-basis: 40rem;
-    flex-grow: 1;
-}
-
-.not-sidebar{
-    flex-basis:0;
-    flex-grow:4;
-    min-width:40%;
-}
 /* Homepage */
 /* About section */
 #about{
@@ -340,16 +285,10 @@ footer{
 
 .menu-item__text__name{
     height: 4em;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
     width: auto;
 }
 
 .menu-item__text__price{
-    display: flex;
-    flex-direction: column;
     margin: 0;
 }
 
@@ -393,13 +332,17 @@ footer{
 #filter{
     width: 40%;
 }
-
 /* Order Page */
+/* Order Summary section of Order Page */
 #options{
     padding: 1% 3%;
+    grid-area: options;
+}
+#order{
+    grid-area: order;
 }
 .order__form{
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap:0.5rem;
@@ -407,6 +350,7 @@ footer{
 }
 .form__heading{
     font-size: var(--text-lg);
+    margin-bottom: var(--space-md);
 }
 .form__elements{
     align-items: flex-start;
@@ -417,13 +361,13 @@ footer{
 }
 .form__elements__label{
     font-size: var(--text-sm);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
     opacity: 80%;
 }
 .form__elements__textbox{
     border-radius: 0.5em;
     border:none;
-    background-color: var(--color-hover);
+    background-color: var(--color-payment-box-header);
     padding: 0.5em;
     height:1.4rem;
     line-height: var(--body-line-height);
@@ -433,6 +377,111 @@ footer{
     width: 40%;
     justify-content: space-between;
 }
+
+.payment-option{
+    border-radius:0.625em ;
+}
+
+.payment-option__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--color-payment-box-header);
+    border-radius: 0.625em;
+    padding: 0.625em;
+}
+
+#option__header-creditcard.active{
+    border-radius: 0.625em 0.625em 0 0;
+}
+
+
+.form__heading--payment{
+    font-size: var(--text-lg);
+    
+}
+
+.payment-option__radio{
+    margin:3px;
+    accent-color: var(--color-cta);
+}
+
+#payment{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625em;
+}
+
+.payment-option__details{
+    background-color: var(--color-payment-box);
+    border-radius: 0 0 0.625em 0.625em;
+    padding: 0.625em;
+    display: none;
+}
+
+#creditcard-details.active{
+    display: block;
+    background-color: var(--color-payment-box);
+    border-radius: 0 0 0.625em 0.625em;
+    padding: 0.625em;
+}
+
+.form__elements__textbox--payment{
+    background-color: var(--color-payment-box-header);
+}
+
+/* Cart Section of Order page */
+.space-fill{
+    background-color: var(--color-sec-background);
+    grid-area: background-fill;
+}
+#order-cart{
+    grid-area: order-cart;
+    background-color: var(--color-sec-background);
+    padding-left: 10%;
+}
+.receipt{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+.receipt__items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5em;
+}
+
+.menu-item__img--receipt{
+    width: 7rem;
+    height: 7rem;
+    position: static;
+    transform: translate(0%, 0%);
+}
+
+.menu-item__text--receipt{
+    width: 70%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-end;
+}
+
+.menu-item__text__name--receipt{
+    height: auto;
+    margin: 0;
+}
+.receipt__price{
+    align-items: center;
+    height: auto;
+    margin: 2em 0.70em;
+    padding: 0.5em;
+}
+
+/* -------------------------------------------------------------------------------- */
 /* Viewport between 768px -> 1023px */
 @media screen and (min-width: 768px) and (max-width:1023px) {
     /* All pages */
@@ -458,6 +507,36 @@ footer{
     #logo{
         scale: 0.5;
     }
+    /* Navbar switches to hamburger when viewport < 768px */
+    #hamburger{
+        display: block;
+    }
+    #hamburger, #cart{
+        z-index: 10;
+    }
+    .nav-menu{
+        z-index: 10;
+        position:fixed;
+        right: -100%;
+        /* top:70px; */
+        top: 0;
+        padding-top: 20%;
+        gap:3%;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: var(--color-cta);
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .nav-item{
+        margin: 1em 0;
+    }
+    .nav-menu.active{
+        right:0;
+    }
+
     footer{
         flex-direction: column;
         gap: 1.25em;
