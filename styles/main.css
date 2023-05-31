@@ -15,6 +15,7 @@ body{
 }
 a{
     text-decoration: none;
+    color: var(--color-primary-text);
 }
 
 section{
@@ -259,10 +260,6 @@ footer{
     cursor: pointer;
 }
 
-.menu-item--more{
-    display: none;
-}
-
 .menu-item__img{
     width: 10rem ;
     height: 10rem ;
@@ -273,6 +270,12 @@ footer{
     transform: translate(0%, -60%);
     cursor: pointer;
 }
+
+.menu-item__img__link{
+    display: flex;
+    justify-content: center;
+}
+
 .mob-hidden{
     display: flex;
 }
@@ -292,11 +295,25 @@ footer{
     margin: 0;
 }
 
-.see-more-container{
+.more--mains, .more--beverages{
+    display: none;
+}
+.more--mains.active, .more--beverages.active{
+    display: flex;
+}
+
+.see-more-container--menu{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
+
+.btn--see-more:hover{
+    background-color: var(--color-background);
+    transform: translateY(0);
+    box-shadow: none;
+}
+
 
 
 /* The 3 circles below the menu items */
@@ -330,8 +347,9 @@ footer{
 }
 
 #filter{
-    width: 40%;
+    width: 3em;
 }
+
 /* Order Page */
 /* Order Summary section of Order Page */
 #options{
@@ -494,6 +512,9 @@ footer{
         display: block;
         height:2rem;
     }
+    #right-arrow{
+        grid-column: 5/6;
+    }
     .menu-item__img{
         width: 6em;
         height: 6em;
@@ -574,8 +595,14 @@ footer{
         height: 7em;
     }
     .carousell__arrow{
-        display: none;
+        /* display: none; */
         height: 2em;
+    }
+    #left-arrow{
+        grid-column: 1/2;
+    }
+    #right-arrow{
+        grid-column: 3/4;
     }
     .mob-hidden{
         display: none;
@@ -618,18 +645,11 @@ footer{
         /* height: 100%; */
         gap: 3%;
         display: none;
-
-        /* animation: slidein; 
-        animation-duration: 0.9s;
-        transition: 0.7s ease-in-out; */
     }
-    
-
-    /* .navbtn{
-        animation: slidein;
-        animation-duration: 0.9s;
-        transition: 0.7s ease-in-out;
-    } */
+    #filter{
+        width: 2em;
+        /* margin-bottom: 1em; */
+    }
 
     footer{
         padding: 10% 3%;

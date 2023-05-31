@@ -47,6 +47,53 @@ window.onload = function(){
             }
         });
     });
+
+    // See more button in menu
+    // Mains
+    const gridMains = document.querySelector("#mains-grid-container");
+    const seeMoreMenuMains = document.querySelector("#see-more--mains");
+    const moreMains = document.querySelectorAll(".more--mains");
+    
+    // When see more is clicked
+    seeMoreMenuMains.addEventListener("click", function(){
+        // toggle the extra menu items
+        moreMains.forEach(function(item){
+            item.classList.toggle("active");
+            // If the class is active change the btn to say see less and give more grid space
+            if(item.classList.contains("active")){
+                seeMoreMenuMains.innerText = "See less";
+                gridMains.classList.replace("grid-container--2r", "grid-container--3r");
+            }
+            // If not reset to default
+            else{
+                seeMoreMenuMains.innerText = "See more";
+                gridMains.classList.replace("grid-container--3r", "grid-container--2r");
+            }
+        });
+    });
+
+    // Beverages See more
+    const seeMoreMenuBeverages = document.querySelector("#see-more--beverages");
+    const moreBeverages = document.querySelectorAll(".more--beverages");
+    const gridBeverages = document.querySelector("#beverages-grid-container");
+    
+    // When see more is clicked
+    seeMoreMenuBeverages.addEventListener("click", function(){
+        // toggle the extra menu items
+        moreBeverages.forEach(function(item){
+            item.classList.toggle("active");
+            // If the class is active change the btn to say see less and give more grid space
+            if(item.classList.contains("active")){
+                seeMoreMenuBeverages.innerText = "See less";
+                gridBeverages.classList.replace("grid-container--2r", "grid-container--5r");
+            }
+            // If not reset to default
+            else{
+                seeMoreMenuBeverages.innerText = "See more";
+                gridBeverages.classList.replace("grid-container--5r", "grid-container--2r");
+            }
+        });
+    });
 }
 
 

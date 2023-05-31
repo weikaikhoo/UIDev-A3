@@ -59,6 +59,14 @@
     margin-top: var(--space-sm);
     justify-content: start;
 }
+
+.grid-container--home{
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 16em;
+    justify-content: center;
+    margin-top: 0;
+}
+
 .grid-container--2r{
     grid-template-rows: repeat(2, 20em);
 }
@@ -100,12 +108,15 @@
 /* Screen size larger than 1440px */
 @media screen and (min-width: 1440px){
     .grid-container{
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 20em;
         grid-gap:var(--space-5xl) var(--space-xl);
     }
     .grid-container--2r{
         grid-template-rows: repeat(2, 20em);
+    }
+    .grid-container--3r{
+        grid-template-rows: repeat(3, 20em);
     }
 
     .grid__item--5{
@@ -119,35 +130,48 @@
         grid-template-rows: 14em;
         grid-gap: var(--space-lg) var(--space-lg);
     }
+
     .grid-container--2r{
         grid-template-rows: repeat(2, 14em);
+    }
+
+    .grid-container--3r{
+        grid-template-rows: repeat(3, 14em);
+    }
+
+    .grid-container--5r{
+        grid-template-rows: repeat(5, 14em);
     }
 
 }
 /* Viewport for Table to mobile */
 @media screen and (width < 768px){
     .grid-container{
-        grid-template-columns: repeat(3, 0.8fr);
-        grid-gap: var(--space-md) var(--space-md);
+        grid-template-columns: repeat(2, 0.8fr);
+        grid-template-rows: repeat(2, 14em);
+        grid-gap: var(--space-lg) var(--space-lg);
     }
     /* use javascript to add grid-container--2r class */
+    /* Convert grid 2 rows to 4 rows */
     .grid-container--2r{
-        grid-template-rows: repeat(2, 14em);
+        grid-template-rows: repeat(4, 14em);
     }
-
-    .grid__item--4{
+    .grid__item--3{
         grid-column: 1/2;
+    }
+    .grid__item--4{
+        grid-column: 2/3;
     }
 
     .grid-container--home{
-        grid-template-columns: 0.8fr;
+        grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: 12em;
         justify-content: center;
         margin-top: 0;
     }
     /* Use javascript to make it grid__item--1 or CSS it */
     .grid__item--2--home{
-        grid-column: 1/2;
+        grid-column: 2/3;
     }
 }
 
