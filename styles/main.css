@@ -349,6 +349,76 @@ footer{
 #filter{
     width: 3em;
 }
+/* Product Page */
+/* Product Details */
+.product__hero__img__container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+.product__hero__img{
+    border-radius: 3em;
+    width: 50%;
+    margin: 1em 0;
+}
+
+.product__description{
+    font-size: var(--text-lg);
+    font-family:var(--font-primary);
+    font-weight: var(--font-medium);
+}
+/* Add on section */
+.add-on__header{
+    margin-bottom: 1em;
+}
+#add-on-toggle{
+    width: 3em;
+    cursor: pointer;
+}
+#add-on-toggle.active{
+    transform: rotate(180deg);
+}
+/* #add-on__option-list{
+    display: none;
+}
+#add-on__option-list.active{
+    display: flex;
+} */
+.add-on__option{
+    display: none;
+}
+#add-on__option-list, .counter{
+    gap: 1em;
+}
+.counter__minus, .counter__plus{
+    width: 2em;
+    opacity: 1;
+    cursor: pointer;
+}
+#add-on-toggle:hover, .counter__minus:hover, .counter__plus:hover{
+    opacity: 0.7;
+}
+.counter__number, .add-on__option__name{
+    margin: 0;
+}
+/* Comments Section */
+#comments__textarea{
+    margin-top: 1em;
+    padding: 0.8%;
+    width: 100%;
+    height: 4em;
+
+    background-color: var(--color-hover);
+    border: none;
+    border-radius: 0.5em;
+    font-size: var(--text-md);
+}
+#comments__textarea:hover, #comments__textarea:focus{
+    outline: none;
+    border: 0.1em solid var(--color-cta);
+}
+/* End of Product Page */
 
 /* Order Page */
 /* Order Summary section of Order Page */

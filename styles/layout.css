@@ -20,6 +20,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     /* margin-bottom: 0.25rem; */
 }
 
@@ -112,6 +113,9 @@
         grid-template-rows: 20em;
         grid-gap:var(--space-5xl) var(--space-xl);
     }
+    .grid-container--home{
+        grid-template-columns: repeat(5, 1fr);
+    }
     .grid-container--2r{
         grid-template-rows: repeat(2, 20em);
     }
@@ -130,6 +134,7 @@
         grid-template-rows: 14em;
         grid-gap: var(--space-lg) var(--space-lg);
     }
+    
 
     .grid-container--2r{
         grid-template-rows: repeat(2, 14em);
@@ -149,7 +154,7 @@
     .grid-container{
         grid-template-columns: repeat(2, 0.8fr);
         grid-template-rows: repeat(2, 14em);
-        grid-gap: var(--space-lg) var(--space-lg);
+        grid-gap: var(--space-xxl) var(--space-lg);
     }
     /* use javascript to add grid-container--2r class */
     /* Convert grid 2 rows to 4 rows */

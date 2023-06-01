@@ -5,15 +5,13 @@ window.onload = function(){
     const navMenu = document.querySelector(".nav-menu");
 
     hamburger.addEventListener("click", () =>{
-        // hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active")
-    })
+        navMenu.classList.toggle("active");
+    });
 
     document.querySelectorAll(".nav-link").forEach(n => 
         n.addEventListener("click", () =>{
-            // hamburger.classList.remove("active");
             navMenu.classList.remove("active");
-    }))
+    })) //end of hamburger toggle
 
 
     //   Scrolling effect for anchor points
@@ -27,7 +25,7 @@ window.onload = function(){
                     });
                 }
         });
-    }); 
+    }); //end of Scrolling effects
     
     // Expanding the payment option
     const radioPayment = document.querySelectorAll(".payment-option__radio");
@@ -46,7 +44,7 @@ window.onload = function(){
                 paymentHeaderCredit.classList.remove("active");
             }
         });
-    });
+    }); //end of radioPayment.forEach
 
     // See more button in menu
     // Mains
@@ -70,7 +68,7 @@ window.onload = function(){
                 gridMains.classList.replace("grid-container--3r", "grid-container--2r");
             }
         });
-    });
+    }); //end of seeMoreMenuMains function
 
     // Beverages See more
     const seeMoreMenuBeverages = document.querySelector("#see-more--beverages");
@@ -92,9 +90,21 @@ window.onload = function(){
                 seeMoreMenuBeverages.innerText = "See more";
                 gridBeverages.classList.replace("grid-container--5r", "grid-container--2r");
             }
-        });
+        }); //end of moreBeverages.forEach
+    }); //end of seeMoreMenuBeverages
+
+    // Add on list expand
+    // const addonList = document.querySelector("#add-on__option-list");
+    const addonOptions = document.querySelectorAll(".add-on__option");
+    const addonToggle = document.querySelector("#add-on-toggle");
+
+    addonToggle.addEventListener("click", function(){
+        // toggle the list with forEach and If statement
+        // addonList.classList.toggle("active");
+        addonToggle.classList.toggle("active")
     });
-}
+
+} //end of window.onload
 
 
 
