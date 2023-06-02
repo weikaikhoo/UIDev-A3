@@ -33,8 +33,9 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div id="cart">
+            <div id="cart" class="cluster">
                 <img class="navbtn" id="cart--icon" src="/UIDev-A3/images/icons/cart.svg" alt="Cart">
+                <div class="cluster font__cta cart-counter" id="cart-counter--order">3</div>
             </div>
             <div id="hamburger">
                 <span class="bar"></span>
@@ -47,8 +48,8 @@
     <div id="order-grid" class="grid-container--order">
         <!-- Section for buttons -->
         <section id="options">
-            <button class="btn">Takeaway</button>
-            <button class="btn">Delivery</button>
+            <button id="toggle--takeaway" class="btn btn--secondary">Takeaway</button>
+            <button id="toggle--delivery" class="btn btn--secondary">Delivery</button>
         </section>
 
         <!-- Blank section for background colour -->
@@ -232,15 +233,9 @@
                         </div>
                     </div>                
                 </section>
-    
-    
-                <!-- Submit Form button -->
-                <div>
-                    <label for="submit"class="btn btn--primary">Checkout</label>
-                </div>
-        
             </form>
-        </section>
+        </section> 
+        <!-- End of Order details -->
 
         <!-- Section showing items ordered -->
         <section id="order-cart">
@@ -248,38 +243,60 @@
             <div class="receipt">
                 <!-- Item 1 -->
                 <div class="receipt__items">
-                    <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="House chicken rice bowl" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="img-container">
+                        <img src="/UIDev-A3/images/menu/house-ricebowl.png" alt="House chicken rice bowl" class="menu-item__img menu-item__img--receipt stack-top">
+                    </div>
                     <div class="menu-item__text menu-item__text--receipt">
                         <p class="menu-item__text__name menu-item__text__name--receipt">House chicken rice bowl</p>
+                        <p class="menu-item__text__qty menu-item__text__qty--receipt">Qty: 1</p>
                         <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
                     </div>
                 </div>
                 
                 <!-- Item 2 -->
                 <div class="receipt__items">
-                    <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="Spam Katsu Burger" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="img-container">
+                        <img src="/UIDev-A3/images/menu/housemade-spamkatsu.jpg" alt="Spam Katsu Burger" class="menu-item__img menu-item__img--receipt stack-top">
+                    </div>
                     <div class="menu-item__text menu-item__text--receipt">
                         <p class="menu-item__text__name menu-item__text__name--receipt">Spam Katsu Burger</p>
-                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                        <p class="menu-item__text__qty menu-item__text__qty--receipt">Qty: 1</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 29</p>
                     </div>
                 </div>
 
                 <!-- Item 3 -->
                 <div class="receipt__items">
-                    <img src="/UIDev-A3/images/menu/House-Rice-Bowl.png" alt="Coconut Panna Cotta" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="img-container">
+                        <img src="/UIDev-A3/images/menu/coconut-pannacotta.jpeg" alt="Coconut Panna Cotta" class="menu-item__img menu-item__img--receipt stack-top">
+                    </div>
                     <div class="menu-item__text menu-item__text--receipt">
                         <p class="menu-item__text__name menu-item__text__name--receipt">Coconut panna cotta</p>
-                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                        <p class="menu-item__text__qty menu-item__text__qty--receipt">Qty: 1</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 20</p>
                     </div>  
                 </div>
             </div>
-            <!-- Total Price of Items -->
-            <div class="cluster receipt__price">
-                <p>Total</p>
-                <p>RM 74</p>
+            <!-- Delivery Price -->
+            <div class="receipt-charges stack">
+                <div class="cluster receipt__price receipt__price--delivery">
+                    <p class="menu-item__text__name menu-item__text__name--receipt">Delivery Fee</p>
+                    <p class="menu-item__text__price menu-item__text__price--receipt">RM 5</p>
+                </div>
+                <!-- Total Price of Items -->
+                <div class="cluster receipt__price ">
+                    <p class="menu-item__text__name menu-item__text__name--receipt menu-item__text__name--total">Total</p>
+                    <p class="menu-item__text__price menu-item__text__price--receipt">RM 79</p>
+                </div>
+            </div>
+
+            <!-- Checkout button -->
+            <div class="checkout-container cluster">
+                <a href="confirm.html"><label for="submit" id="btn-checkout" class="btn btn--primary">Checkout</label></a>
             </div>
         </section>
-    </div>
+    </div> <!-- End of Grid -->
+    
 
 
 </main>

@@ -33,8 +33,9 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div id="cart">
+            <div id="cart" class="cluster">
                 <img class="navbtn" id="cart--icon" src="/UIDev-A3/images/icons/cart.svg" alt="Cart">
+                <div class="cluster font__cta cart-counter">3</div>
             </div>
             <div id="hamburger">
                 <span class="bar"></span>
@@ -43,6 +44,72 @@
             </div>
         </nav>
     </header>
+    <main>
+        <div id="order-confirmed">
+            <!-- Section for order details and payment -->
+            <section id="order-confirmation">
+                <!-- Contact Details -->
+                <h2 class="order__title">Your order (#0001) has been confirmed</h2>
+                <p  id="order__note" class="font__cta">We will notify you when your food is ready. Thank you and have a nice day</p>
+
+            </section> 
+            <!-- End of Order details -->
+    
+            <!-- Section showing items ordered -->
+            <section id="order-cart--confirmed">
+                    <h2>Receipt</h2>
+                    <div class="receipt">
+                        <!-- Item 1 -->
+                        <div class="receipt__items">
+                            <div class="img-container">
+                                <img src="/UIDev-A3/images/menu/house-ricebowl.png" alt="House chicken rice bowl" class="menu-item__img menu-item__img--receipt stack-top">
+                            </div>
+                            <div class="menu-item__text menu-item__text--receipt">
+                                <p class="menu-item__text__name menu-item__text__name--receipt">House chicken rice bowl</p>
+                                <p class="menu-item__text__qty menu-item__text__qty--receipt">Qty: 1</p>
+                                <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="receipt__items">
+                            <div class="img-container">
+                                <img src="/UIDev-A3/images/menu/housemade-spamkatsu.jpg" alt="Spam Katsu Burger" class="menu-item__img menu-item__img--receipt stack-top">
+                            </div>
+                            <div class="menu-item__text menu-item__text--receipt">
+                                <p class="menu-item__text__name menu-item__text__name--receipt">Spam Katsu Burger</p>
+                                <p class="menu-item__text__qty menu-item__text__qty--receipt">Qty: 1</p>
+                                <p class="menu-item__text__price menu-item__text__price--receipt">RM 29</p>
+                            </div>
+                        </div>
+        
+                        <!-- Item 3 -->
+                        <div class="receipt__items">
+                            <div class="img-container">
+                                <img src="/UIDev-A3/images/menu/coconut-pannacotta.jpeg" alt="Coconut Panna Cotta" class="menu-item__img menu-item__img--receipt stack-top">
+                            </div>
+                            <div class="menu-item__text menu-item__text--receipt">
+                                <p class="menu-item__text__name menu-item__text__name--receipt">Coconut panna cotta</p>
+                                <p class="menu-item__text__qty menu-item__text__qty--receipt">Qty: 1</p>
+                                <p class="menu-item__text__price menu-item__text__price--receipt">RM 20</p>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- Delivery Price -->
+                    <div class="receipt-charges stack">
+                        <div class="cluster receipt__price receipt__price--delivery">
+                            <p class="menu-item__text__name--receipt">Delivery Fee</p>
+                            <p class="menu-item__text__price menu-item__text__price--receipt">RM 5</p>
+                        </div>
+                        <!-- Total Price of Items -->
+                        <div class="cluster receipt__price ">
+                            <p class="menu-item__text__name--receipt menu-item__text__name--total">Total</p>
+                            <p class="menu-item__text__price menu-item__text__price--receipt">RM 79</p>
+                        </div>
+                    </div>
+            </section>
+        </div> <!-- End of Grid -->
+    </main>
 <footer id="contact">
     <div class="footer__column">
         <div class="footer__column__element">
@@ -79,40 +146,6 @@
         </div>
     </div>
 </footer>
-    <div class="footer__column">
-        <div class="footer__column__element">
-            <img src="/UIDev-A3/images/icons/location.svg" alt="Location icon" class="footer__icon">
-            <p>47, Jalan SS22/23. Damansara Jaya</p>
-        </div>
-        <div class="footer__column__element">
-            <img src="/UIDev-A3/images/icons/Clock.svg" alt="Clock icon" class="footer__icon">
-            <p>Tue - Sun <br>
-                Lunch: 12pm - 3pm (last call 2.30pm)<br>
-                Dinner: 6pm - 11pm (last call 10pm)
-            </p>
-        </div>
-    </div>
 
-    <div class="footer__column"  id="copyright"  >
-        <div class="footer__column__element">
-            <p>&copy; Li Damansara Jaya 2023</p>
-        </div>
-    </div>
-
-    <div class="footer__column">
-        <div class="footer__column__element">
-            <img src="/UIDev-A3/images/icons/mail.svg" alt="email icon" class="footer__icon">
-            <p>eat@lidamansarajaya.com</p>
-        </div>
-        <div class="footer__column__element">
-            <img src="/UIDev-A3/images/icons/mobile.svg" alt="mobile icon" class="footer__icon">
-            <p>+60377337692</p>
-        </div>
-        <div class="footer__column__element">
-            <img src="/UIDev-A3/images/icons/Facebook.svg" alt="facebook icon" class="footer__icon">
-            <img src="/UIDev-A3/images/icons/instagram.svg" alt="instagram icon" class="footer__icon">
-        </div>
-    </div>
-</footer>
 </body>
 </html>

@@ -33,8 +33,9 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div id="cart">
+            <div id="cart" class="cluster">
                 <img class="navbtn" id="cart--icon" src="/UIDev-A3/images/icons/cart.svg" alt="Cart">
+                <div class="cluster font__cta cart-counter">3</div>
             </div>
             <div id="hamburger">
                 <span class="bar"></span>
@@ -43,6 +44,45 @@
             </div>
         </nav>
     </header>
+        <!-- Cart Menu -->
+        <!-- Section showing items ordered -->
+        <section class="cart-menu">
+            <h2>Order Summary</h2>
+            <div class="receipt receipt--cart">
+                <!-- Item 1 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/house-ricebowl.png" alt="House chicken rice bowl" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">House chicken rice bowl</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/housemade-spamkatsu.jpg" alt="Spam Katsu Burger" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">Spam Katsu Burger</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/coconut-pannacotta.jpeg" alt="Coconut Panna Cotta" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">Coconut panna cotta</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                    </div>  
+                </div>
+            </div>
+            <!-- Total Price of Items -->
+            <div class="cluster receipt__price receipt__price--cart">
+                <p>Total</p>
+                <p>RM 74</p>
+            </div>
+            <a href="order.html" class="btn btn--hero btn-rounded font__cta ">Checkout</a>
+        </section>
     <main>
         <!-- Product details section -->
         <div class="product__hero__img__container">
@@ -69,57 +109,57 @@
                 <div class="add-on__option cluster">
                     <p class="add-on__option__name font__cta">Sauce aside</p>
                     <span class="counter cluster">
-                        <img class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
-                        <p class="counter__number">0</p>
-                        <img class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
+                        <img id="counter__minus--sauce-aside" class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
+                        <input type="number" id="qty--sauce-aside" class="qty__input font__cta" name="qty" required min="" value="0"/>
+                        <img id="counter__plus--sauce-aside" class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
                     </span>
                 </div>
                 <div class="add-on__option cluster">
                     <p class="add-on__option__name font__cta">Half rice</p>
                     <span class="counter cluster">
-                        <img class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
-                        <p class="counter__number">0</p>
-                        <img class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
+                        <img id="counter__minus--half-rice" class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
+                        <input type="number" id="qty--half-rice" class="qty__input font__cta" name="qty" required min="" value="0"/>
+                        <img id="counter__plus--half-rice" class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
                     </span>
                 </div>
                 <div class="add-on__option cluster">
                     <p class="add-on__option__name font__cta">Extra rice</p>
                     <span class="counter cluster">
-                        <img class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
-                        <p class="counter__number">0</p>
-                        <img class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
+                        <img id="counter__minus--extra-rice" class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
+                        <input type="number" id="qty--extra-rice" class="qty__input font__cta" name="qty" required min="" value="0"/>
+                        <img id="counter__plus--extra-rice" class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
                     </span>
                 </div>
                 <div class="add-on__option cluster">
                     <p class="add-on__option__name font__cta">Extra egg</p>
                     <span class="counter cluster">
-                        <img class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
-                        <p class="counter__number">0</p>
-                        <img class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
+                        <img id="counter__minus--extra-egg" class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
+                        <input type="number" id="qty--extra-egg" class="qty__input font__cta" name="qty" required min="" value="0"/>
+                        <img id="counter__plus--extra-egg" class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
                     </span>
                 </div>
                 <div class="add-on__option cluster">
                     <p class="add-on__option__name font__cta">Extra braised pork belly</p>
                     <span class="counter cluster">
-                        <img class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
-                        <p class="counter__number">0</p>
-                        <img class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
+                        <img id="counter__minus--extra-pork" class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
+                        <input type="number" id="qty--extra-pork" class="qty__input font__cta" name="qty" required min="" value="0"/>
+                        <img id="counter__plus--extra-pork" class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
                     </span>
                 </div>
                 <div class="add-on__option cluster">
                     <p class="add-on__option__name font__cta">Extra chicken thigh</p>
                     <span class="counter cluster">
-                        <img class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
-                        <p class="counter__number">0</p>
-                        <img class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
+                        <img id="counter__minus--extra-chicken" class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
+                        <input type="number" id="qty--extra-chicken" class="qty__input font__cta" name="qty" required min="" value="0"/>
+                        <img id="counter__plus--extra-chicken" class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
                     </span>
                 </div>
                 <div class="add-on__option cluster">
                     <p class="add-on__option__name font__cta">Extra spam</p>
                     <span class="counter cluster">
-                        <img class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
-                        <p class="counter__number">0</p>
-                        <img class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
+                        <img id="counter__minus--extra-spam" class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">
+                        <input type="number" id="qty--extra-spam" class="qty__input font__cta" name="qty" required min="" value="0"/>
+                        <img id="counter__plus--extra-spam" class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
                     </span>
                 </div>
             </div>
@@ -130,6 +170,23 @@
             <h3>Comments</h3>
             <input id="comments__textarea" type="textarea" name="comments bar">
         </section>
+        <section class="cluster add-to-cart-cta">
+            <div class="counter-container--item-qty cluster">
+                <label for="qty" class="font__cta">Quantity:</label>
+                <span class="cluster counter counter--item__qty">
+                    <img id="counter__minus--item__qty" class="counter__minus" src="/UIDev-A3/images/icons/counter__minus.svg" alt="minus counter">              
+                    <input type="number" id="item__qty" class="qty__input font__cta" name="qty" required min="1" value="1"/>
+                    <img id="counter__plus--item__qty" class="counter__plus" src="/UIDev-A3/images/icons/counter__plus.svg" alt="plus counter">
+                </span>
+            </div>
+
+
+            <a id="btn--add-to-cart" href="order.html" class="btn btn--primary font__cta cluster">Add to cart 
+                <img class="add-to-cart__icon" src="/UIDev-A3/images/icons/cart.svg" alt="Cart">
+            </a>
+        </section>
+
+        
     </main>
 <footer>
     <div class="footer__column">

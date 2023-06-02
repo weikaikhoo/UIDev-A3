@@ -23,6 +23,9 @@
     align-items: center;
     /* margin-bottom: 0.25rem; */
 }
+.cluster--flex-end{
+    justify-content: flex-end;
+}
 
 /* In order to make an element be on top */
 .stack-top{
@@ -105,6 +108,13 @@
     "options background-fill"
     "order order-cart";
 }
+#options{
+    grid-area: options;
+}
+#order{
+    grid-area: order;
+}
+
 
 /* Screen size larger than 1440px */
 @media screen and (min-width: 1440px){
@@ -178,6 +188,17 @@
     .grid__item--2--home{
         grid-column: 2/3;
     }
+
+    /* Order Page Grid */
+    .grid-container--order{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        "options"
+        "order"
+        "order-cart";
+}
 }
 
 

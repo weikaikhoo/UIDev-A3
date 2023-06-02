@@ -33,8 +33,9 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div id="cart">
+            <div id="cart" class="cluster">
                 <img class="navbtn" id="cart--icon" src="/UIDev-A3/images/icons/cart.svg" alt="Cart">
+                <div class="cluster font__cta cart-counter">3</div>
             </div>
             <div id="hamburger">
                 <span class="bar"></span>
@@ -44,10 +45,66 @@
         </nav>
     </header>
     <main>
+        <!-- Cart Menu -->
+        <!-- Section showing items ordered -->
+        <section class="cart-menu">
+            <h2>Order Summary</h2>
+            <div class="receipt receipt--cart">
+                <!-- Item 1 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/house-ricebowl.png" alt="House chicken rice bowl" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">House chicken rice bowl</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/housemade-spamkatsu.jpg" alt="Spam Katsu Burger" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">Spam Katsu Burger</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/coconut-pannacotta.jpeg" alt="Coconut Panna Cotta" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">Coconut panna cotta</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt">RM 25</p>
+                    </div>  
+                </div>
+            </div>
+            <!-- Total Price of Items -->
+            <div class="cluster receipt__price receipt__price--cart">
+                <p>Total</p>
+                <p>RM 74</p>
+            </div>
+            <a href="order.html" class="btn btn--hero btn-rounded font__cta ">Checkout</a>
+        </section>
         <section class="title-bar cluster">
             <h1>Menu</h1>
             <div><img id="filter" class="navbtn" src="/UIDev-A3/images/icons/Filter.svg" alt="filter icon"></div>
         </section>
+        <!-- Filter Bar -->
+        <div id="filter-bar" class="stack">
+            <div class="filter-options-row cluster">
+                <button id="filter-option--lunch" class="btn btn--secondary">Lunch</button>
+                <button id="filter-option--dinner" class="btn btn--secondary">Dinner</button>
+                <button id="filter-option--beverages" class="btn btn--secondary">Beverages</button>
+                <button id="filter-option--featured" class="btn btn--secondary">Featured</button>
+                <button id="filter-option--vegetarian" class="btn btn--secondary">Vegetarian</button>
+            </div>
+            <div class="filter-options-row cluster">
+                <button id="filter-option--snacks" class="btn btn--secondary">Snacks</button>
+                <button id="filter-option--appetizers" class="btn btn--secondary">Appetizers</button>
+                <button id="filter-option--mains" class="btn btn--secondary">Mains</button>
+                <button id="filter-option--desserts" class="btn btn--secondary">Desserts</button>
+            </div>
+        </div>
+        <!-- Menu items -->
         <section id="snacks">
             <h2>Snacks</h2>
             <div class="grid-container">
@@ -203,7 +260,7 @@
                     </div>
                 </article>
 
-                <article class="menu-item menu-item--dinner grid__item grid__item--4">
+                <article class="menu-item menu-item--lunch grid__item grid__item--4">
                     <a class="menu-item__img__link" href="product.html">
                         <img src="/UIDev-A3/images/menu/claypot-mushroom-rice.jpg" alt="Claypot mushroom rice" class="menu-item__img stack-top">
                     </a>

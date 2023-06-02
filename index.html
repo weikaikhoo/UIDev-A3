@@ -35,8 +35,9 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div id="cart">
+            <div id="cart" class="cluster">
                 <img class="navbtn" id="cart--icon" src="/UIDev-A3/images/icons/cart.svg" alt="Cart">
+                <div class="cluster font__cta cart-counter">3</div>
             </div>
             <div id="hamburger">
                 <span class="bar"></span>
@@ -44,18 +45,58 @@
                 <span class="bar"></span>
             </div>
         </nav>
+
     </header>
     <main>
-       
+        <!-- Cart Menu -->
+        <!-- Section showing items ordered -->
+        <section class="cart-menu">
+            <h2>Order Summary</h2>
+            <div class="receipt receipt--cart">
+                <!-- Item 1 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/house-ricebowl.png" alt="House chicken rice bowl" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">House chicken rice bowl</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt ">RM 25</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/housemade-spamkatsu.jpg" alt="Spam Katsu Burger" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">Spam Katsu Burger</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt ">RM 29</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="receipt__items">
+                    <img src="/UIDev-A3/images/menu/coconut-pannacotta.jpeg" alt="Coconut Panna Cotta" class="menu-item__img menu-item__img--receipt stack-top">
+                    <div class="menu-item__text menu-item__text--receipt">
+                        <p class="menu-item__text__name menu-item__text__name--receipt">Coconut panna cotta</p>
+                        <p class="menu-item__text__price menu-item__text__price--receipt ">RM 20</p>
+                    </div>  
+                </div>
+            </div>
+            <!-- Total Price of Items -->
+            <div class="cluster receipt__price receipt__price--cart">
+                <p>Total</p>
+                <p>RM 74</p>
+            </div>
+            <a href="order.html" class="btn btn--hero btn-rounded font__cta ">Checkout</a>
+        </section>
+        <!-- Hero Section -->
         <section id="hero">
             <div class="stack-top">
                 <h1 class="hero__heading">Experience Malaysian Cuisine<br> in a Modern Light</h1>
                 <p class="hero__description">Inspired by our Malaysian roots, Li looks to bring Malaysian produce and culture in a casual and innovative way</p>
                 <a href="menu.html" class="btn btn--hero btn-rounded font__cta ">Order now</a>
             </div>
-            <!-- <img src="/UIDev-A3/images/Hero-image.png" alt="#" class="hero-img"> -->
-            <!-- <div class="white-overlay"></div> -->
         </section>
+
+        <!-- About Section -->
         <section id="about" class="sidebar-container">
             <div class="about__cta sidebar">
                 <h2 class="about__cta__heading">About</h2>
@@ -67,6 +108,7 @@
             </div>
                 <img src="/UIDev-A3/images/About-img.jpg" alt="Li workers engaged in a meeting" class="about__image not-sidebar">
         </section>
+        <!-- Menu section Home preview -->
         <section id="menu">
             <h2 class="menu__heading">Menu</h2>
             <!-- Carousell -->
