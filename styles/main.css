@@ -523,8 +523,9 @@ footer{
     padding: 3%;
 }
 
-#toggle--takeaway.disabled, #toggle--delivery.disabled{
+.disabled{
     background-color: var(--color-disabled);
+    color: var(--color-white);
 }
 
 
@@ -822,7 +823,6 @@ footer{
         height: 7em;
     }
     .carousell__arrow{
-        /* display: none; */
         height: 2em;
     }
     #left-arrow{
@@ -901,6 +901,9 @@ footer{
     .menu-item__img{
         width: 10rem;
         height: 10rem;
+    }
+    .checkout-container{
+        height: 30%;
     }
     /* End of Homepage -> Menu section */
 }   
