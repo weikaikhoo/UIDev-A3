@@ -36,12 +36,8 @@ window.onload = function(){
     }); //end of Scrolling effects
     // --------------------------Home Page------------------------------------------
     // Carousel
-
-    
     const carouselArrowLeft = document.querySelector("#carousel__left-arrow");
     const carouselArrowRight = document.querySelector("#carousel__right-arrow");
-
-
     if (carouselArrowLeft && carouselArrowRight){
         if (window.innerWidth <= 425){
             // Mob version of left arrow
@@ -629,7 +625,218 @@ window.onload = function(){
         }); //end of radioPayment.forEach
     }
 
+    // Function validate form
+    const form = document.querySelector("#form--order");
+    form.addEventListener("submit", function(event){
+        event.preventDefault();
+        if (validateForm()){
+            window.location.href = "confirm.html";
+        }
+        else{
+            // Form is invalid
+        }
+    })
 
+    const btnCheckout = document.querySelector("#btn--checkout");
+    btnCheckout.addEventListener("click", validateForm);
+
+    function validateForm(){
+        // name
+        const inputName = document.querySelector("#input-name");
+        const errorName = document.querySelector("#name__error");
+        if (inputName.value == "" || inputName.value == null){
+            inputName.classList.add("error");
+            errorName.innerText = "Please enter a valid name";
+            
+        }
+        else{
+            inputName.classList.remove("error");
+            errorName.innerText ="";
+        }
+        // Telephone
+        const inputTel = document.querySelector("#input-tel");
+        const errorTel = document.querySelector("#tel__error");
+        var validRegexTel = /^(\d{3})[- ]?(\d{3})[- ]?(\d{4})$/;
+        if (inputTel.value.match(validRegexTel)){
+            // valid telephone input
+            inputTel.classList.remove("error");
+            errorTel.innerText ="";
+            
+        }
+        else{
+            inputTel.classList.add("error");
+            errorTel.innerText = "Please enter only digits, brackets, hyphen";
+        }
+
+        // Email
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        const inputEmail = document.querySelector("#input-email");
+        const errorEmail = document.querySelector("#email__error");
+        if (inputEmail.value.match(validRegex) ){
+            // valid email input  
+            inputEmail.classList.remove("error");
+            errorEmail.innerText ="";  
+            
+        }
+        else{
+            inputEmail.classList.add("error");
+            errorEmail.innerText = "Please enter a valid email";
+        }
+
+        // Address Street line 1 validity
+        const inputAddress = document.querySelector("#input-address");
+        const errorAddress = document.querySelector("#address__error");
+        let addressValue = inputAddress.value.trim();
+        if (addressValue.length=== 0){
+            inputAddress.classList.add("error");
+            errorAddress.innerText = "Address is required"; 
+        }
+        else{
+            inputAddress.classList.remove("error");
+            errorAddress.innerText="";
+        }
+
+        // City Validity
+        const inputCity = document.querySelector("#input-city");
+        const errorCity = document.querySelector("#city__error");
+        if (inputCity.value == "" || inputCity.value == null){
+            inputCity.classList.add("error");
+            errorCity.innerText = "Please enter a valid city";
+        }
+        else{
+            inputCity.classList.remove("error");
+            errorCity.innerText ="";
+        }
+        
+        // State Validity
+        const inputState = document.querySelector("#input-state");
+        const errorState = document.querySelector("#state__error");
+        if (inputState.value == "" || inputState.value == null){
+            inputState.classList.add("error");
+            errorState.innerText = "Enter a valid state"; 
+        }
+        else{
+            inputState.classList.remove("error");
+            errorState.innerText ="";
+        }
+
+        // Postcode
+        const inputPostcode = document.querySelector("#input-postcode");
+        const errorPostcode = document.querySelector("#postcode__error");
+        if (inputPostcode.value == "" || inputPostcode.value == null){
+            inputPostcode.classList.add("error");
+            errorPostcode.innerText = "Please enter a valid postcode";
+        }
+        else{
+            inputPostcode.classList.remove("error");
+            errorPostcode.innerText ="";
+        }
+
+        // Check that user's date is in the future
+        const inputDate = document.querySelector("#input-date");
+        const errorDate = document.querySelector("#date__error");
+        let parsedDate = Date.parse(inputDate.value);
+        if (parsedDate < Date.now()){
+            inputDate.classList.add("error");
+            errorDate.innerText = "Please enter a date in the future";
+        }
+        else{
+            inputDate.classList.remove("error");
+            errorDate.innerText ="";
+        }
+        // Validity of Time
+        const inputTime = document.querySelector("#input-time");
+        var timeValue = inputTime.value;
+        const errorTime = document.querySelector("#time__error");
+        const timeRegex = /^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/;
+        const isValidTime = timeRegex.test(timeValue);
+        const isWithinLunch = timeValue >= "11:00" && timeValue <= "14:59";
+        const isWithinDinner = timeValue >= "18:00" && timeValue <= "23:00";
+        
+        if (isValidTime && (isWithinLunch || isWithinDinner)) {
+            // Time is valid
+            inputTime.classList.remove("error");
+            errorTime.innerText ="";
+        } 
+        else {
+            // Time is invalid
+            inputTime.classList.add("error");
+            errorTime.innerText = "Please enter a valid time";
+        }
+
+        // Payment validity
+        // cardholder's name
+        const inputCardHolder = document.querySelector("#input-cardholder");
+        const errorCardHolder = document.querySelector("#card-holder__error");
+        if (inputCardHolder.value == "" || inputCardHolder.value == null){
+            inputCardHolder.classList.add("error");
+            errorCardHolder.innerText = "Please enter a valid name";
+        }
+        else{
+            inputCardHolder.classList.remove("error");
+            errorCardHolder.innerText ="";
+        }        
+
+        // card number
+        const inputCardNumber = document.querySelector("#input-cardnumber");
+        const errorCardNumber = document.querySelector("#card-number__error");
+        var cardNumber = inputCardNumber.value.replace(/\s/g, "").replace(/-/g, "");
+        if (inputCardNumber.value == "" || inputCardNumber.value == null || !/^\d{16}$/.test(cardNumber)){
+            inputCardNumber.classList.add("error");
+            errorCardNumber.innerText = "Please enter a credit card number";
+        }
+        else{
+            inputCardNumber.classList.remove("error");
+            errorCardNumber.innerText ="";
+        }
+          // Perform the Luhn algorithm check ~ algorithm to check legitimacy of credit card numbers
+        let sum = 0;
+        let shouldDouble = false;
+        for (let i = cardNumber.length - 1; i >= 0; i--) {
+            let digit = parseInt(cardNumber.charAt(i));
+            if (shouldDouble) {
+            digit *= 2;
+            if (digit > 9) {
+                digit -= 9;
+            }
+            }
+            sum += digit;
+            shouldDouble = !shouldDouble;
+        }
+        if (sum % 10 !== 0) {
+            inputCardNumber.classList.add("error");
+            errorCardNumber.innerText = "Please enter a valid credit card number";
+        }
+
+        // expiry date
+        // Check that user's date is in the future
+        const inputExpiry = document.querySelector("#input-expiry");
+        const errorExpiry = document.querySelector("#expiry__error");
+        let parsedExpiry = Date.parse(inputDate.value);
+        if (parsedExpiry < Date.now()){
+            inputExpiry.classList.add("error");
+            errorExpiry.innerText = "Please enter a date in the future";
+        }
+        else{
+            inputExpiry.classList.remove("error");
+            errorExpiry.innerText ="";
+        }
+
+        // cvc validity
+        const inputCVC = document.querySelector("#input-cvc");
+        const errorCVC = document.querySelector("#cvc__error");
+        var cvc = inputCVC.value;
+        if (cvc == "" || cvc == null || cvc.length > 3){
+            inputCVC.classList.add("error");
+            errorCVC.innerText = "Please enter a valid CVC";
+        }
+        else{
+            inputCVC.classList.remove("error");
+            errorCVC.innerText ="";
+        }
+
+        return true
+    }
 
 } //end of window.onload
 

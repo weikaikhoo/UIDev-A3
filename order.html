@@ -59,17 +59,18 @@
         <section id="order">
             <!-- Contact Details -->
             <h2 class="order__title">Order Details</h2>
-            <form action="confirm.html" class="order__form">
+            <form id="form--order" action="confirm.html" class="order__form">
                 <h3 class="form__heading">Name</h3>
                 <div id="form-section--name" class="form__elements">
                     <div id="form-section--name__full-name"class="form__elements__pair stack">
                         <!-- Name -->
-                        <input class="form__elements__textbox name" 
+                        <input id="input-name" class="form__elements__textbox name" 
                         type="text"  
                         name="name" 
                         minlength="2" 
                         required pattern="[a-z|A-Z| |-]*"
                         oninvalid="this.setCustomValidity('Please enter only letters, space, hyphen')"/>  
+                        <div id="name__error" class="form__error__msg"></div>
                         <label for="name" class="form__elements__label">Full name</label>
                     </div>
                 </div>
@@ -78,18 +79,20 @@
                 <div id="form-section--contact" class="form__elements cluster ">
                     <!-- Mobile Number -->
                     <div id="form-section--contact__mob-number" class="form__elements__pair stack form__elements__pair--forty">
-                        <input class="form__elements__textbox phone" 
+                        <input id="input-tel" class="form__elements__textbox phone" 
                         type="tel" 
                         name="phone" 
                         required pattern="(\(|\)|-|[0-9])*"
                         oninvalid="this.setCustomValidity('Please enter only digits, brackets, hyphen')"/>
+                        <div id="tel__error" class="form__error__msg"></div>
                         <label for="phone" class="form__elements__label">Mobile Number</label>
                     </div>
                     <!-- Email -->
                     <div id="form-section--contact__email" class="form__elements__pair stack form__elements__pair--forty">
-                        <input class="form__elements__textbox email" 
+                        <input id="input-email" class="form__elements__textbox email" 
                         type="email" 
                         name="email" required>
+                        <div id="email__error" class="form__error__msg"></div>
                         <label for="email" class="form__elements__label">Email</label>
                     </div>
                 </div>
@@ -98,38 +101,43 @@
                 <div id="form-section--address" class="form__elements">
                     <!-- Street Address Line 1 -->
                     <div id="form-section--address__street-one" class="form__elements__pair stack">
-                        <input id="address__textbox--street-one" class="form__elements__textbox textbox-address" 
+                        <input id="input-address" class="form__elements__textbox textbox-address" 
                         type="text" 
                         name="address" required>
+                        <div id="address__error" class="form__error__msg"></div>
                         <label for="address" class="form__elements__label">Street Address</label>  
                     </div>
                     <!-- Street Address Line 2 -->
                     <div id="form-section--address__street-two" class="form__elements__pair stack">
-                        <input id="address__textbox--street-two" class="form__elements__textbox textbox-address" 
+                        <input id="input-address--2" class="form__elements__textbox textbox-address" 
                         type="text" 
                         name="address">
+                        <div id="address__error--2" class="form__error__msg"></div>
                         <label for="address" class="form__elements__label">Street Address Line 2</label>
                     </div>
                     <div id="form-section--address__city" class="form__elements cluster">
                         <!-- City -->
                         <div class="form__elements__pair stack ">
-                            <input id="address__textbox--city" class="form__elements__textbox textbox-address" 
+                            <input id="input-city" class="form__elements__textbox textbox-address" 
                             type="text"  
                             name="address" required>
+                            <div id="city__error" class="form__error__msg"></div>
                             <label for="address" class="form__elements__label">City</label>
                         </div>
                         <!-- State -->
                         <div id="form-section--address__state" class="form__elements__pair stack">                
-                            <input id="address__textbox--state" class="form__elements__textbox textbox-address" 
+                            <input id="input-state" class="form__elements__textbox textbox-address" 
                             type="text" 
                             name="address" required>
+                            <div id="state__error" class="form__error__msg"></div>
                             <label for="address" class="form__elements__label">State</label>
                         </div>
                         <!-- Postcode -->
                         <div id="form-section--address__postcode" class="form__elements__pair stack">
-                            <input id="address__textbox--postcode" class="form__elements__textbox textbox-address" 
-                            type="text" 
+                            <input id="input-postcode" class="form__elements__textbox textbox-address" 
+                            type="number" 
                             name="address" required>
+                            <div id="postcode__error" class="form__error__msg"></div>
                             <label for="address" class="form__elements__label">Postcode</label>
                         </div>
                     </div>
@@ -138,18 +146,20 @@
                     <div id="form-section--time"class="form__elements cluster">
                         <!-- Date -->
                         <div id="form-section--time__date" class="form__elements__pair stack">
-                            <input class="form__elements__textbox date" 
+                            <input id="input-date" class="form__elements__textbox date" 
                             type="date"  
                             name="date" required/>
+                            <div id="date__error" class="form__error__msg"></div>
                             <label for="date" class="form__elements__label">Date</label>
                         </div>
                         <!-- Time -->
                         <div id="form-section--time__time" class="form__elements__pair stack">
-                            <input class="form__elements__textbox time" 
-                            type="time"  
-                            name="time" 
+                            <input id="input-time" class="form__elements__textbox time" 
+                            type="time" step="900"
+                            name="time" min="11:00" max="23:00"
                             value="11:00" 
-                            step="900" required/>
+                             required/>
+                            <div id="time__error" class="form__error__msg"></div>
                             <label for="time" class="form__elements__label">Time</label>
                         </div>
                     </div>
@@ -172,39 +182,42 @@
                         <div class="payment-option__details" id="creditcard-details">
                             <!-- Card Holder's Name -->
                             <div class="form__elements__pair stack">
-                                <input class="form__elements__textbox form__elements__textbox--payment name" 
+                                <input id="input-cardholder" class="form__elements__textbox form__elements__textbox--payment name" 
                                 type="text" 
                                 name="name" 
                                 required minlength="2" pattern="[a-z|A-Z| |-]*"
-                                oninvalid="this.setCustomValidity('Please enter only letters, space, hyphen')"/>  
-                                <label for="name" class="form__elements__label">Card Holder's Name</label>
+                                oninvalid="this.setCustomValidity('Please enter only letters, space, hyphen')"/> 
+                                <div id="card-holder__error" class="form__error__msg"></div> 
+                                <label for="input-cardholder" class="form__elements__label">Card Holder's Name</label>
                             </div>
                             <!-- Card Number -->
                             <div class="form__elements__pair stack form__elements__pair--forty">
-                                <input class="form__elements__textbox form__elements__textbox--payment phone" 
-                                type="tel" 
-                                name="phone" 
-                                required pattern="(\(|\)|-|[0-9])*"
-                                oninvalid="this.setCustomValidity('Please enter only digits, brackets, hyphen')"/>
-                                <label for="phone" class="form__elements__label">Card Number</label>
+                                <input id="input-cardnumber" class="form__elements__textbox form__elements__textbox--payment phone" 
+                                type="text" 
+                                name="card number" 
+                                required />
+                                <div id="card-number__error" class="form__error__msg"></div>
+                                <label for="input-cardnumber" class="form__elements__label">Card Number</label>
                             </div>
                             <!-- Expiry Date & CVC -->   
                             <div class="form__elements cluster ">
                                 <!-- Expiry Date -->
                                 <div class="form__elements__pair stack">
-                                    <input class="form__elements__textbox form__elements__textbox--payment date" 
+                                    <input id="input-expiry" class="form__elements__textbox form__elements__textbox--payment date" 
                                     type="month" 
                                     name="date" 
                                     required pattern="\d{0}-\d{2}-\d{2}"/>
+                                    <div id="expiry__error" class="form__error__msg"></div>
                                     <label for="date" class="form__elements__label">Expiry Date</label>
                                 </div>
                                 <!-- CVC -->
                                 <div class="form__elements__pair stack form__elements__pair--forty">
-                                    <input class="form__elements__textbox form__elements__textbox--payment cvc" 
+                                    <input id="input-cvc" class="form__elements__textbox form__elements__textbox--payment cvc" 
                                     type="password" 
                                     name="CVC" 
                                     required pattern="(\(|\)|-|[0-9])*"
-                                    oninvalid="this.setCustomValidity('Please enter only digits, brackets, hyphen')"/>
+                                    oninvalid="this.setCustomValidity('Please enter only 3 digits')"/>
+                                    <div id="cvc__error" class="form__error__msg"></div>
                                     <label for="CVC" class="form__elements__label">CVC</label>
                                 </div>
                             </div>
@@ -233,6 +246,12 @@
                         </div>
                     </div>                
                 </section>
+                <!-- Checkout button -->
+                <div class="checkout-container cluster">
+                    <!-- <a href="confirm.html"> -->
+                        <input type="submit" id="btn--checkout" class="btn btn--primary" value="Checkout">
+                    <!-- </a> -->
+            </div>
             </form>
         </section> 
         <!-- End of Order details -->
@@ -290,10 +309,7 @@
                 </div>
             </div>
 
-            <!-- Checkout button -->
-            <div class="checkout-container cluster">
-                <a href="confirm.html"><label for="submit" id="btn-checkout" class="btn btn--primary">Checkout</label></a>
-            </div>
+
         </section>
     </div> <!-- End of Grid -->
     

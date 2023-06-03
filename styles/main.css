@@ -508,7 +508,8 @@ footer{
     margin-top: 1em;
     padding: 0.8%;
     width: 100%;
-    height: 4em;
+    resize: vertical;
+    min-height: 4em;
 
     background-color: var(--color-hover);
     border: none;
@@ -561,6 +562,10 @@ footer{
     margin-bottom: var(--space-md);
     opacity: 80%;
 }
+.form__error__msg{
+    font-size: var(--text-sm);
+    color: rgb(171, 29, 29);
+}
 .form__elements__textbox{
     border-radius: 0.5em;
     border:none;
@@ -568,6 +573,9 @@ footer{
     padding: 0.5em;
     height:1.4rem;
     line-height: var(--body-line-height);
+}
+.error{
+    outline:solid 0.2em rgb(171, 29, 29);
 }
 .form__elements__pair--forty{
     display: flex;
