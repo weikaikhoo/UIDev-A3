@@ -40,54 +40,152 @@ window.onload = function(){
     
     const carouselArrowLeft = document.querySelector("#carousel__left-arrow");
     const carouselArrowRight = document.querySelector("#carousel__right-arrow");
+
+
     if (carouselArrowLeft && carouselArrowRight){
-        // Left arrow functionality
+        if (window.innerWidth <= 425){
+            // Mob version of left arrow
+            carouselArrowLeft.addEventListener("click", function(){
+                // Mobile Page
+                const mobActive = document.querySelectorAll(".carousel__active-mob");
+                const mobNext = document.querySelectorAll(".carousel__next-mob");
+                const mobPrev = document.querySelectorAll(".carousel__prev-mob");
+    
+                mobActive.forEach(function(mobItem){
+                    mobItem.classList.replace("carousel__active-mob", "carousel__next-mob");
+                });
+                mobNext.forEach(function(mobItem){
+                    mobItem.classList.replace("carousel__next-mob", "carousel__prev-mob");
+                });
+                mobPrev.forEach(function(mobItem){
+                    mobItem.classList.replace("carousel__prev-mob", "carousel__active-mob");
+                }); 
+            });
+            // Mob version of right arrow
+            carouselArrowRight.addEventListener("click", function(){
+                // Mobile Page
+                const mobActive = document.querySelectorAll(".carousel__active-mob");
+                const mobNext = document.querySelectorAll(".carousel__next-mob");
+                const mobPrev = document.querySelectorAll(".carousel__prev-mob");
+    
+                mobActive.forEach(function(mobItem){
+                    mobItem.classList.replace("carousel__active-mob", "carousel__prev-mob");
+                });
+                mobNext.forEach(function(mobItem){
+                    mobItem.classList.replace("carousel__next-mob", "carousel__active-mob");
+                });
+                mobPrev.forEach(function(mobItem){
+                    mobItem.classList.replace("carousel__prev-mob", "carousel__next-mob");
+                }); 
+            });
+        }
+        if(window.innerWidth > 425){
+            // Left arrow functionality
+            carouselArrowLeft.addEventListener("click", function(){
+                // define menu items and rows
+                // Active Page
+                const activeOne = document.querySelectorAll(".carousel__active--1");
+                const activeTwo = document.querySelectorAll(".carousel__active--2");
+                const activeThree = document.querySelectorAll(".carousel__active--3");
+                // Next page
+                const nextOne = document.querySelectorAll(".carousel__next--1");
+                const nextTwo = document.querySelectorAll(".carousel__next--2");
+                const nextThree = document.querySelectorAll(".carousel__next--3");
+                // Prev Page
+                const prevOne = document.querySelectorAll(".carousel__prev--1");
+                const prevTwo = document.querySelectorAll(".carousel__prev--2");
+                const prevThree = document.querySelectorAll(".carousel__prev--3");
+
+                // Change active page to new next page
+                activeOne.forEach(function(item){
+                    item.classList.replace("carousel__active--1", "carousel__next--1");
+                });
+                activeTwo.forEach(function(item){
+                    item.classList.replace("carousel__active--2", "carousel__next--2");
+                });
+                activeThree.forEach(function(item){
+                    item.classList.replace("carousel__active--3", "carousel__next--3");
+                })
+                
+                // Change prev next page to new previous page
+                nextOne.forEach(function(item){
+                    item.classList.replace("carousel__next--1", "carousel__prev--1");
+                });
+                nextTwo.forEach(function(item){
+                    item.classList.replace("carousel__next--2", "carousel__prev--2");
+                });
+                nextThree.forEach(function(item){
+                    item.classList.replace("carousel__next--3", "carousel__prev--3");
+                })
+
+                // Change prev previous page to new active page
+                prevOne.forEach(function(item){
+                    item.classList.replace("carousel__prev--1", "carousel__active--1");
+                });
+                prevTwo.forEach(function(item){
+                    item.classList.replace("carousel__prev--2", "carousel__active--2");
+                });
+                prevThree.forEach(function(item){
+                    item.classList.replace("carousel__prev--3", "carousel__active--3");
+                });
+            });
+
+            // Right arrow functionality
+            carouselArrowRight.addEventListener("click", function(){
+                // define menu items and rows
+                // Active page
+                const activeOne = document.querySelectorAll(".carousel__active--1");
+                const activeTwo = document.querySelectorAll(".carousel__active--2");
+                const activeThree = document.querySelectorAll(".carousel__active--3");
+                // Next page
+                const nextOne = document.querySelectorAll(".carousel__next--1");
+                const nextTwo = document.querySelectorAll(".carousel__next--2");
+                const nextThree = document.querySelectorAll(".carousel__next--3");
+                // Prev Page
+                const prevOne = document.querySelectorAll(".carousel__prev--1");
+                const prevTwo = document.querySelectorAll(".carousel__prev--2");
+                const prevThree = document.querySelectorAll(".carousel__prev--3");
+                
+                // Change active page to new prev page
+                activeOne.forEach(function(item){
+                    item.classList.replace("carousel__active--1", "carousel__prev--1");
+                });
+                activeTwo.forEach(function(item){
+                    item.classList.replace("carousel__active--2", "carousel__prev--2");
+                });
+                activeThree.forEach(function(item){
+                    item.classList.replace("carousel__active--3", "carousel__prev--3");
+                })
+                
+                // Change prev next page to new active page
+                nextOne.forEach(function(item){
+                    item.classList.replace("carousel__next--1", "carousel__active--1");
+                });
+                nextTwo.forEach(function(item){
+                    item.classList.replace("carousel__next--2", "carousel__active--2");
+                });
+                nextThree.forEach(function(item){
+                    item.classList.replace("carousel__next--3", "carousel__active--3");
+                })
+                // Change prev previous page to new next page
+                prevOne.forEach(function(item){
+                    item.classList.replace("carousel__prev--1", "carousel__next--1");
+                });
+                prevTwo.forEach(function(item){
+                    item.classList.replace("carousel__prev--2", "carousel__next--2");
+                });
+                prevThree.forEach(function(item){
+                    item.classList.replace("carousel__prev--3", "carousel__next--3");
+                });
+            });
+        } //end of if statement > 425
+
+        // Carousell page transition when left arrow is clicked
         carouselArrowLeft.addEventListener("click", function(){
-            // define menu items and rows
-            const activeOne = document.querySelectorAll(".carousel__active--1");
-            const activeTwo = document.querySelectorAll(".carousel__active--2");
-            const activeThree = document.querySelectorAll(".carousel__active--3");
-            const nextOne = document.querySelectorAll(".carousel__next--1");
-            const nextTwo = document.querySelectorAll(".carousel__next--2");
-            const nextThree = document.querySelectorAll(".carousel__next--3");
-            const prevOne = document.querySelectorAll(".carousel__prev--1");
-            const prevTwo = document.querySelectorAll(".carousel__prev--2");
-            const prevThree = document.querySelectorAll(".carousel__prev--3");
+            // Carousel Pages
             const dotActive = document.querySelectorAll(".carousel__pages--active");
             const dotNext = document.querySelectorAll(".carousel__pages--next");
             const dotPrev = document.querySelectorAll(".carousel__pages--prev");
-
-            // Change active page to new next page
-            activeOne.forEach(function(item){
-                item.classList.replace("carousel__active--1", "carousel__next--1");
-            });
-            activeTwo.forEach(function(item){
-                item.classList.replace("carousel__active--2", "carousel__next--2");
-            });
-            activeThree.forEach(function(item){
-                item.classList.replace("carousel__active--3", "carousel__next--3");
-            })
-            
-            // Change prev next page to new previous page
-            nextOne.forEach(function(item){
-                item.classList.replace("carousel__next--1", "carousel__prev--1");
-            });
-            nextTwo.forEach(function(item){
-                item.classList.replace("carousel__next--2", "carousel__prev--2");
-            });
-            nextThree.forEach(function(item){
-                item.classList.replace("carousel__next--3", "carousel__prev--3");
-            })
-            // Change prev previous page to new active page
-            prevOne.forEach(function(item){
-                item.classList.replace("carousel__prev--1", "carousel__active--1");
-            });
-            prevTwo.forEach(function(item){
-                item.classList.replace("carousel__prev--2", "carousel__active--2");
-            });
-            prevThree.forEach(function(item){
-                item.classList.replace("carousel__prev--3", "carousel__active--3");
-            });
             // Traverse through pages via dots
             dotActive.forEach(function(dot){
                 dot.classList.replace("carousel__pages--active", "carousel__pages--next");
@@ -98,55 +196,14 @@ window.onload = function(){
             dotPrev.forEach(function(dot){
                 dot.classList.replace("carousel__pages--prev", "carousel__pages--active");
             });
-
         });
 
+        // Carousell page transition when right arrow is clicked
         carouselArrowRight.addEventListener("click", function(){
-            // define menu items and rows
-            const activeOne = document.querySelectorAll(".carousel__active--1");
-            const activeTwo = document.querySelectorAll(".carousel__active--2");
-            const activeThree = document.querySelectorAll(".carousel__active--3");
-            const nextOne = document.querySelectorAll(".carousel__next--1");
-            const nextTwo = document.querySelectorAll(".carousel__next--2");
-            const nextThree = document.querySelectorAll(".carousel__next--3");
-            const prevOne = document.querySelectorAll(".carousel__prev--1");
-            const prevTwo = document.querySelectorAll(".carousel__prev--2");
-            const prevThree = document.querySelectorAll(".carousel__prev--3");
+            // Carousel Pages
             const dotActive = document.querySelectorAll(".carousel__pages--active");
             const dotNext = document.querySelectorAll(".carousel__pages--next");
             const dotPrev = document.querySelectorAll(".carousel__pages--prev");
-            
-            // Change active page to new prev page
-            activeOne.forEach(function(item){
-                item.classList.replace("carousel__active--1", "carousel__prev--1");
-            });
-            activeTwo.forEach(function(item){
-                item.classList.replace("carousel__active--2", "carousel__prev--2");
-            });
-            activeThree.forEach(function(item){
-                item.classList.replace("carousel__active--3", "carousel__prev--3");
-            })
-            
-            // Change prev next page to new active page
-            nextOne.forEach(function(item){
-                item.classList.replace("carousel__next--1", "carousel__active--1");
-            });
-            nextTwo.forEach(function(item){
-                item.classList.replace("carousel__next--2", "carousel__active--2");
-            });
-            nextThree.forEach(function(item){
-                item.classList.replace("carousel__next--3", "carousel__active--3");
-            })
-            // Change prev previous page to new next page
-            prevOne.forEach(function(item){
-                item.classList.replace("carousel__prev--1", "carousel__next--1");
-            });
-            prevTwo.forEach(function(item){
-                item.classList.replace("carousel__prev--2", "carousel__next--2");
-            });
-            prevThree.forEach(function(item){
-                item.classList.replace("carousel__prev--3", "carousel__next--3");
-            });
             // Traverse through pages via dots
             dotActive.forEach(function(dot){
                 dot.classList.replace("carousel__pages--active", "carousel__pages--prev");

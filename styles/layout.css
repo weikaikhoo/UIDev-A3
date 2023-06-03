@@ -165,7 +165,7 @@
         grid-template-rows: 20em;
         grid-gap:var(--space-5xl) var(--space-xl);
     }
-    .grid-container--home{
+    .grid-container--carousel{
         grid-template-columns: repeat(5, 1fr);
     }
     .grid-container--2r{
@@ -187,7 +187,6 @@
         grid-gap: var(--space-lg) var(--space-lg);
     }
     
-
     .grid-container--2r{
         grid-template-rows: repeat(2, 14em);
     }
@@ -199,7 +198,9 @@
     .grid-container--5r{
         grid-template-rows: repeat(5, 14em);
     }
-
+    .grid-container--carousel{
+        grid-template-rows: 0 14em 0;
+    }
 }
 /* Viewport for Table to mobile */
 @media screen and (width < 768px){
@@ -220,11 +221,22 @@
         grid-column: 2/3;
     }
 
-    .grid-container--home{
+    .grid-container--carousel{
         grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: 12em;
-        justify-content: center;
-        margin-top: 0;
+        grid-template-rows: 0 12em 0;
+        grid-template-areas: 
+        "left-arrow mob-prev right-arrow"
+        "left-arrow mob-active right-arrow"
+        "left-arrow mob-next right-arrow";
+    }
+    .carousel__prev-mob{
+        grid-area: mob-prev;
+    }
+    .carousel__active-mob{
+        grid-area: mob-active;
+    }
+    .carousel__next-mob{
+        grid-area: mob-next;
     }
     /* Use javascript to make it grid__item--1 or CSS it */
     .grid__item--2--home{

@@ -901,6 +901,9 @@ footer{
     .menu-item{
         width: auto;
     }
+    .carousel__prev-mob, .carousel__next-mob{
+        display: none;
+    }
 
 }   
 /* Viewport larger than 1440px */
