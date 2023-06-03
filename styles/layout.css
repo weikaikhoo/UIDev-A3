@@ -5,6 +5,11 @@
 	flex-direction: column;
 	justify-content: flex-start;
 }
+.stack--menu-item{
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
 
 .stack > * {
     margin-top: 0;
@@ -64,13 +69,6 @@
     justify-content: start;
 }
 
-.grid-container--home{
-    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
-    grid-template-rows: 16em;
-    justify-content: center;
-    margin-top: 0;
-}
-
 .grid-container--2r{
     grid-template-rows: repeat(2, 20em);
 }
@@ -97,6 +95,50 @@
 
 .grid__item--4{
     grid-column: 4/5;
+}
+/* ----------------Carousel------------------- */
+.grid-container--carousel{
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 0 16em 0;
+    grid-template-areas: 
+    "left-arrow prev-1 prev-2 prev-3 right-arrow"
+    "left-arrow active-1 active-2 active-3 right-arrow"
+    "left-arrow next-1 next-2 next-3 right-arrow";
+    justify-content: center;
+    margin-top: 0;
+}
+#carousel__left-arrow{
+    grid-area: left-arrow;
+}
+#carousel__right-arrow{
+    grid-area: right-arrow;
+}
+.carousel__active--1{
+    grid-area: active-1;
+}
+.carousel__active--2{
+    grid-area: active-2;
+}
+.carousel__active--3{
+    grid-area: active-3;
+}
+.carousel__next--1{
+    grid-area: next-1;
+}
+.carousel__next--2{
+    grid-area: next-2;
+}
+.carousel__next--3{
+    grid-area: next-3;
+}
+.carousel__prev--1{
+    grid-area: prev-1;
+}
+.carousel__prev--2{
+    grid-area: prev-2;
+}
+.carousel__prev--3{
+    grid-area: prev-3;
 }
 
 /* Order Page Grid */

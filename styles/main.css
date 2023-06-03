@@ -265,9 +265,7 @@ footer{
     width: 1.5em;
 }
 
-.display-none{
-    display: none;
-}
+
 
 /* Homepage */
 /* About section */
@@ -289,14 +287,15 @@ footer{
 #menu{
     display: flex;
     flex-direction: column;
-    gap:2em;
+    gap:0.2em;
 }
-/* Menu carousell showing list of products */
-.carousell__arrow{
+/* Menu carousel showing list of products */
+.carousel__arrow{
     align-self: center;
     justify-self: center;
     cursor: pointer;
 }
+
 /* Individual Menu item module */
 .menu-item{
     position: relative;
@@ -373,17 +372,20 @@ footer{
     box-shadow: none;
 }
 
-
+.carousel__next--1, .carousel__next--2, .carousel__next--3, 
+.carousel__prev--1, .carousel__prev--2, .carousel__prev--3{
+    display:none;
+}
 
 /* The 3 circles below the menu items */
-.carousell__pages{
+.carousel__pages{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 }
-.carousell__pages__dot{
+.carousel__pages__dot{
     display: inline-block;
     height: 1rem;
     width: 1rem;
@@ -391,11 +393,14 @@ footer{
     border-radius: 50%;
     margin-bottom: 1em;
 }
-.carousell__pages__dot:hover{
+.carousel__pages--active{
+    background-color: var(--color-cta);
+}
+.carousel__pages__dot:hover{
     transform: translateY(-0.1em);
     box-shadow: 0 0.5em 0.5em -0.4em black;
 }
-.carousell__pages__dot:active{
+.carousel__pages__dot:active{
     background-color: var(--color-cta);
 }
 /* Menu Page */
@@ -696,6 +701,9 @@ footer{
     align-items: flex-end;
 }
 
+.display-none{
+    display: none;
+}
 /* -------------------------------------------------------------------------------- */
 /* Viewport between 768px -> 1023px */
 @media screen and (min-width: 768px) and (max-width:1023px) {
@@ -705,7 +713,7 @@ footer{
     }
     /* End of All pages */
     /* Homepage */
-    .carousell__arrow{
+    .carousel__arrow{
         display: block;
         height:2rem;
     }
@@ -814,7 +822,7 @@ footer{
     #menu{
         gap:1em;
     }
-    .carousell{
+    .carousel{
         gap: 2em;
         padding-top: 1em;
     }
@@ -822,13 +830,13 @@ footer{
         width: 7em;
         height: 7em;
     }
-    .carousell__arrow{
+    .carousel__arrow{
         height: 2em;
     }
-    #left-arrow{
+    #carousel__left-arrow{
         grid-column: 1/2;
     }
-    #right-arrow{
+    #carousel__right-arrow{
         grid-column: 3/4;
     }
     .mob-hidden{

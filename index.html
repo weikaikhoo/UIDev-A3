@@ -111,38 +111,98 @@
         <!-- Menu section Home preview -->
         <section id="menu">
             <h2 class="menu__heading">Menu</h2>
-            <!-- Carousell -->
-            <div class="grid-container grid-container--home carousell ">
-                <img class="grid__item grid__item--1 carousell__arrow" id="left-arrow" src="/UIDev-A3/images/icons/left-arrow.svg" alt="left arrow icon">
-                <article class="menu-item grid__item grid__item--2 grid__item--2--home">
+            <!-- Carousel -->
+            <div class="grid-container grid-container--carousel carousel">
+                <!-- Carousel left arrow -->
+                <img class="grid__item grid__item--1 carousel__arrow" id="carousel__left-arrow" src="/UIDev-A3/images/icons/left-arrow.svg" alt="left arrow icon">
+                <!-- Carousel page 1 item 1 -->
+                <article id="carousel-page1-item--1" class="menu-item grid__item grid__item--2 grid__item--2--home carousel__active--1">
                     <img class="menu-item__img stack-top" src="/UIDev-A3/images/menu/house-ricebowl.png" alt="House chicken rice bowl">
                     <div class="menu-item__text">
                         <a class="menu-item__text__name font__cta">House chicken rice bowl</a>
                         <p class="menu-item__text__price font__cta">RM 25</p>
                     </div>
                 </article>
-                <article class="menu-item grid__item grid__item--3 mob-hidden">
+
+                <!-- Carousel page 1 item 2 -->
+                <article id="carousel-page1-item--2" class="menu-item grid__item grid__item--3 mob-hidden carousel__active--2">
                     <img class="menu-item__img stack-top" src="/UIDev-A3/images/menu/housemade-spamkatsu.jpg" alt="Housemade Spam Katsu">
                     <div class="menu-item__text">
                         <a class="menu-item__text__name font__cta">Housemade spam katsu burger</a> 
                         <p class="menu-item__text__price font__cta">RM 29</p>
                     </div>
-                
                 </article>
-                <article class="menu-item grid__item grid__item--4 mob-hidden">
-                    <img  class="menu-item__img stack-top" src="/UIDev-A3/images/menu/chickenchop.png" alt="Chicken Chop">
+
+                <!-- Carousel page 1 item 3 -->
+                <article id="carousel-page1-item--3" class="menu-item grid__item grid__item--4 mob-hidden carousel__active--3">
+                    <img class="menu-item__img stack-top" src="/UIDev-A3/images/menu/chickenchop.png" alt="Chicken Chop">
                     <div class="menu-item__text">
                         <a class="menu-item__text__name font__cta">Chicken chop</a>
                         <p class="menu-item__text__price font__cta">RM 30</p>
                     </div>
-                        
                 </article>
-                <img class="grid__item grid__item--5 carousell__arrow" id="right-arrow" src="/UIDev-A3/images/icons/right-arrow.svg" alt="right arrow icon">
+                <!-- Carousel right arrow -->
+                <img class="grid__item grid__item--5 carousel__arrow" id="carousel__right-arrow" src="/UIDev-A3/images/icons/right-arrow.svg" alt="right arrow icon">
+                <!-- Carousel page 2 -->
+                <!-- Carousel page 2 item 1 -->
+                <article id="carousel-page2-item--1" class="menu-item grid__item grid__item--2 grid__item--2--home carousel__next--1">
+                    <img class="menu-item__img stack-top" src="/UIDev-A3/images/menu/sourdough-toast.png" alt="Provision's sourdough, kaya + butter">
+                    <div class="menu-item__text">
+                        <a class="menu-item__text__name font__cta">Provision's sourdough, kaya + butterl</a>
+                        <p class="menu-item__text__price font__cta">RM 10</p>
+                    </div>
+                </article>
+
+                <!-- Carousel page 2 item 2 -->
+                <article id="carousel-page2-item--2" class="menu-item grid__item grid__item--3 mob-hidden carousel__next--2">
+                    <img class="menu-item__img stack-top" src="/UIDev-A3/images/menu/porktoast.png" alt="Pork Toast, chilli mayo">
+                    <div class="menu-item__text">
+                        <a class="menu-item__text__name font__cta">Pork Toast, chilli mayo</a> 
+                        <p class="menu-item__text__price font__cta">RM 10</p>
+                    </div>
+                </article>
+
+                <!-- Carousel page 2 page 1 item 3 -->
+                <article id="carousel-page2-item-=3" class="menu-item grid__item grid__item--4 mob-hidden carousel__next--3">
+                    <img class="menu-item__img stack-top" src="/UIDev-A3/images/menu/Dumplings-of-the-Day.png" alt="Dumplings of the day">
+                    <div class="menu-item__text">
+                        <a class="menu-item__text__name font__cta">Dumplings of the day</a>
+                        <p class="menu-item__text__price font__cta">RM 16</p>
+                    </div>
+                </article>
+
+                <!-- Carousel page 3 -->
+                <!-- Carousel page 3 item 1 -->
+                <article id="carousel-page3-item--1" class="menu-item grid__item grid__item--2 grid__item--2--home carousel__prev--1">
+                    <img class="menu-item__img stack-top" src="/UIDev-A3/images/menu/kamheong-chickenchop.jpeg" alt="Spring kam heong 'chicken chop'">
+                    <div class="menu-item__text">
+                        <a class="menu-item__text__name font__cta">Spring kam heong 'chicken chop'</a>
+                        <p class="menu-item__text__price font__cta">RM 38/70</p>
+                    </div>
+                </article>
+
+                <!-- Carousel page 3 item 2 -->
+                <article id="carousel-page3-item--2" class="menu-item grid__item grid__item--3 mob-hidden carousel__prev--2">
+                    <img class="menu-item__img stack-top" src="/UIDev-A3/images/menu/fish-of-the-day.jpg" alt="Market fish of the day">
+                    <div class="menu-item__text">
+                        <a class="menu-item__text__name font__cta">Market fish of the day</a> 
+                        <p class="menu-item__text__price font__cta">RM 37</p>
+                    </div>
+                </article> 
+
+                <!-- Carousel page 3 item 3 -->
+                <article id="carousel-page3-item--3" class="menu-item grid__item grid__item--4 mob-hidden carousel__prev--3">
+                    <img class="menu-item__img stack-top" src="/UIDev-A3/images/menu/roselle-charsiu-pork.jpg" alt="Pork roselle charsiu">
+                    <div class="menu-item__text">
+                        <a class="menu-item__text__name font__cta">Pork roselle charsiu</a>
+                        <p class="menu-item__text__price font__cta">RM 65</p>
+                    </div>
+                </article>
             </div>
-            <div class="carousell__pages">
-                <span class="carousell__pages__dot"></span>
-                <span class="carousell__pages__dot"></span> 
-                <span class="carousell__pages__dot"></span>
+            <div class="carousel__pages">
+                <span class="carousel__pages__dot carousel__pages--active"></span>
+                <span class="carousel__pages__dot carousel__pages--next"></span> 
+                <span class="carousel__pages__dot carousel__pages--prev"></span>
             </div>
         </section>
     </main>
