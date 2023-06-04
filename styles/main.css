@@ -800,6 +800,9 @@ footer{
     .menu-item{
         width: auto;
     }
+    #contact{
+        flex-direction: column;
+    }
 }   
 /* Viewport larger than 1440px */
 @media screen and (width>1440px){
