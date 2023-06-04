@@ -616,11 +616,16 @@ window.onload = function(){
                 toggleTakeaway.classList.remove("btn--primary");
                 toggleTakeaway.classList.add("disabled");
                 chargeDelivery.classList.remove("display-none");
+
             }
             if (toggleDelivery.classList.contains("disabled")){
                 toggleDelivery.classList.replace("disabled", "btn--primary");
                 toggleTakeaway.classList.replace("btn--primary", "disabled");
                 chargeDelivery.classList.remove("display-none");
+                textboxAddress.forEach(function(textbox){
+                    textbox.classList.remove("form-disabled");
+                });
+                // when toggleDelivery is on the error messages shouldn't be needed
             }
         })
     }
@@ -672,7 +677,7 @@ window.onload = function(){
         if (inputName.value == "" || inputName.value == null){
             inputName.classList.add("error");
             errorName.innerText = "Please enter a valid name";
-            
+            return false;
         }
         else{
             inputName.classList.remove("error");
@@ -686,11 +691,11 @@ window.onload = function(){
             // valid telephone input
             inputTel.classList.remove("error");
             errorTel.innerText ="";
-            
         }
         else{
             inputTel.classList.add("error");
             errorTel.innerText = "Please enter only digits, brackets, hyphen";
+            return false;
         }
 
         // Email
@@ -701,20 +706,25 @@ window.onload = function(){
             // valid email input  
             inputEmail.classList.remove("error");
             errorEmail.innerText ="";  
-            
         }
         else{
             inputEmail.classList.add("error");
             errorEmail.innerText = "Please enter a valid email";
+            return false;
         }
 
         // Address Street line 1 validity
         const inputAddress = document.querySelector("#input-address");
         const errorAddress = document.querySelector("#address__error");
         let addressValue = inputAddress.value.trim();
+
         if (addressValue.length=== 0){
             inputAddress.classList.add("error");
             errorAddress.innerText = "Address is required"; 
+        }
+        if (toggleTakeaway.classList.contains("btn--primary")){
+            inputAddress.classList.remove("error");
+            errorAddress.innerText="";
         }
         else{
             inputAddress.classList.remove("error");
@@ -727,6 +737,7 @@ window.onload = function(){
         if (inputCity.value == "" || inputCity.value == null){
             inputCity.classList.add("error");
             errorCity.innerText = "Please enter a valid city";
+            return false;
         }
         else{
             inputCity.classList.remove("error");
@@ -739,6 +750,7 @@ window.onload = function(){
         if (inputState.value == "" || inputState.value == null){
             inputState.classList.add("error");
             errorState.innerText = "Enter a valid state"; 
+            return false;
         }
         else{
             inputState.classList.remove("error");
@@ -751,6 +763,7 @@ window.onload = function(){
         if (inputPostcode.value == "" || inputPostcode.value == null){
             inputPostcode.classList.add("error");
             errorPostcode.innerText = "Please enter a valid postcode";
+            return false;
         }
         else{
             inputPostcode.classList.remove("error");
@@ -764,6 +777,7 @@ window.onload = function(){
         if (parsedDate < Date.now()){
             inputDate.classList.add("error");
             errorDate.innerText = "Please enter a date in the future";
+            return false;
         }
         else{
             inputDate.classList.remove("error");
@@ -782,6 +796,7 @@ window.onload = function(){
             // Time is valid
             inputTime.classList.remove("error");
             errorTime.innerText ="";
+            return false;
         } 
         else {
             // Time is invalid
@@ -796,6 +811,7 @@ window.onload = function(){
         if (inputCardHolder.value == "" || inputCardHolder.value == null){
             inputCardHolder.classList.add("error");
             errorCardHolder.innerText = "Please enter a valid name";
+            return false;
         }
         else{
             inputCardHolder.classList.remove("error");
@@ -809,6 +825,7 @@ window.onload = function(){
         if (inputCardNumber.value == "" || inputCardNumber.value == null || !/^\d{16}$/.test(cardNumber)){
             inputCardNumber.classList.add("error");
             errorCardNumber.innerText = "Please enter a credit card number";
+            return false;
         }
         else{
             inputCardNumber.classList.remove("error");
@@ -831,6 +848,7 @@ window.onload = function(){
         if (sum % 10 !== 0) {
             inputCardNumber.classList.add("error");
             errorCardNumber.innerText = "Please enter a valid credit card number";
+            return false;
         }
 
         // expiry date
@@ -841,6 +859,7 @@ window.onload = function(){
         if (parsedExpiry < Date.now()){
             inputExpiry.classList.add("error");
             errorExpiry.innerText = "Please enter a date in the future";
+            return false;
         }
         else{
             inputExpiry.classList.remove("error");
@@ -854,6 +873,7 @@ window.onload = function(){
         if (cvc == "" || cvc == null || cvc.length > 3){
             inputCVC.classList.add("error");
             errorCVC.innerText = "Please enter a valid CVC";
+            return false;
         }
         else{
             inputCVC.classList.remove("error");
