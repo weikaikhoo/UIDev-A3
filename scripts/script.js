@@ -716,16 +716,25 @@ window.onload = function(){
         // Address Street line 1 validity
         const inputAddress = document.querySelector("#input-address");
         const errorAddress = document.querySelector("#address__error");
+        const toggleTakeaway = document.querySelector("#toggle--takeaway");
         let addressValue = inputAddress.value.trim();
 
-        if (addressValue.length=== 0){
+        if (toggleTakeaway.classList.contains("btn--primary")){
+            // Disable address field when toggleDelivery is active
+            inputAddress.disabled = true;
+            inputAddress.classList.remove("error");
+            errorAddress.innerText="";
+            inputAddress.removeAttribute("required");
+        }
+        else{
+            inputAddress.disabled = false;
+            inputAddress.setAttribute("required", "required");
+        }    
+        if ((!toggleTakeaway.classList.contains("btn--primary")) && addressValue.length=== 0){
             inputAddress.classList.add("error");
             errorAddress.innerText = "Address is required"; 
         }
-        if (toggleTakeaway.classList.contains("btn--primary")){
-            inputAddress.classList.remove("error");
-            errorAddress.innerText="";
-        }
+
         else{
             inputAddress.classList.remove("error");
             errorAddress.innerText="";
@@ -734,7 +743,18 @@ window.onload = function(){
         // City Validity
         const inputCity = document.querySelector("#input-city");
         const errorCity = document.querySelector("#city__error");
-        if (inputCity.value == "" || inputCity.value == null){
+        if (toggleTakeaway.classList.contains("btn--primary")){
+            // Disable address field when toggleDelivery is active
+            inputCity.disabled = true;
+            inputCity.classList.remove("error");
+            errorCity.innerText="";
+            inputCity.removeAttribute("required");
+        }
+        else{
+            inputCity.disabled = false;
+            inputCity.setAttribute("required", "required");
+        }   
+        if ((!toggleTakeaway.classList.contains("btn--primary")) && (inputCity.value == "" || inputCity.value == null)){
             inputCity.classList.add("error");
             errorCity.innerText = "Please enter a valid city";
             return false;
@@ -747,7 +767,18 @@ window.onload = function(){
         // State Validity
         const inputState = document.querySelector("#input-state");
         const errorState = document.querySelector("#state__error");
-        if (inputState.value == "" || inputState.value == null){
+        if (toggleTakeaway.classList.contains("btn--primary")){
+            // Disable address field when toggleDelivery is active
+            inputState.disabled = true;
+            inputState.classList.remove("error");
+            errorState.innerText="";
+            inputState.removeAttribute("required");
+        }
+        else{
+            inputState.disabled = false;
+            inputState.setAttribute("required", "required");
+        }  
+        if ((!toggleTakeaway.classList.contains("btn--primary")) && (inputState.value == "" || inputState.value == null)){
             inputState.classList.add("error");
             errorState.innerText = "Enter a valid state"; 
             return false;
@@ -760,7 +791,18 @@ window.onload = function(){
         // Postcode
         const inputPostcode = document.querySelector("#input-postcode");
         const errorPostcode = document.querySelector("#postcode__error");
-        if (inputPostcode.value == "" || inputPostcode.value == null){
+        if (toggleTakeaway.classList.contains("btn--primary")){
+            // Disable address field when toggleDelivery is active
+            inputPostcode.disabled = true;
+            inputPostcode.classList.remove("error");
+            errorPostcode.innerText="";
+            inputPostcode.removeAttribute("required");
+        }
+        else{
+            inputPostcode.disabled = false;
+            inputPostcode.setAttribute("required", "required");
+        }  
+        if ((!toggleTakeaway.classList.contains("btn--primary")) && (inputPostcode.value == "" || inputPostcode.value == null)){
             inputPostcode.classList.add("error");
             errorPostcode.innerText = "Please enter a valid postcode";
             return false;
@@ -796,12 +838,12 @@ window.onload = function(){
             // Time is valid
             inputTime.classList.remove("error");
             errorTime.innerText ="";
-            return false;
         } 
         else {
             // Time is invalid
             inputTime.classList.add("error");
             errorTime.innerText = "Please enter a valid time";
+            return false;
         }
 
         // Payment validity
@@ -855,7 +897,7 @@ window.onload = function(){
         // Check that user's date is in the future
         const inputExpiry = document.querySelector("#input-expiry");
         const errorExpiry = document.querySelector("#expiry__error");
-        let parsedExpiry = Date.parse(inputDate.value);
+        let parsedExpiry = Date.parse(inputExpiry.value);
         if (parsedExpiry < Date.now()){
             inputExpiry.classList.add("error");
             errorExpiry.innerText = "Please enter a date in the future";
