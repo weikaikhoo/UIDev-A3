@@ -14,4 +14,10 @@
     --color-payment-box: #E4DDCE;
     --color-white: #FEFEFE;
     --color-disabled: #c3cbc6c5;
+
+    color: var(--color-primary-text);
 } 
+
+body{
+    background-color: var(--color-background);
+}

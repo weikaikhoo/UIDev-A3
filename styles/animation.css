@@ -9,3 +9,12 @@
         width: 40%;
     }
 }
+
+.page {
+    opacity: 1;
+    transition: opacity 10s ease-in-out;
+  }
+  
+  .page.fade-out {
+    opacity: 0;
+  }

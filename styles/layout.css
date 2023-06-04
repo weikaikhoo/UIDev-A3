@@ -45,17 +45,17 @@
 .sidebar-container{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .sidebar{
     flex-basis: 40rem;
     flex-grow: 1;
+    max-width: 50%;
 }
 
 .not-sidebar{
     flex-basis:0;
-    flex-grow:4;
+    flex-grow:1;
     min-width:40%;
 }
 
@@ -204,6 +204,12 @@
 }
 /* Viewport for Table to mobile */
 @media screen and (width < 768px){
+    .sidebar-container{
+        flex-wrap: wrap;
+    }
+    .sidebar{
+        max-width: 100%;
+    }
     .grid-container{
         grid-template-columns: repeat(2, 0.8fr);
         grid-template-rows: repeat(2, 14em);
@@ -252,7 +258,8 @@
         "options"
         "order"
         "order-cart";
-}
+    }
+
 }
 
 

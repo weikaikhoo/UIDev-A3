@@ -627,18 +627,23 @@ window.onload = function(){
 
     // Function validate form
     const form = document.querySelector("#form--order");
-    form.addEventListener("submit", function(event){
-        event.preventDefault();
-        if (validateForm()){
-            window.location.href = "confirm.html";
-        }
-        else{
-            // Form is invalid
-        }
-    })
+    if (form){
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+            if (validateForm()){
+                window.location.href = "confirm.html";
+            }
+            else{
+                // Form is invalid
+            }
+        })
+    }
 
     const btnCheckout = document.querySelector("#btn--checkout");
-    btnCheckout.addEventListener("click", validateForm);
+    if (btnCheckout){
+        btnCheckout.addEventListener("click", validateForm);
+    }
+    
 
     function validateForm(){
         // name

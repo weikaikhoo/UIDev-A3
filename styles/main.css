@@ -6,12 +6,7 @@
 
 :root{
     font-family: var(--font-primary);
-    color: var(--color-primary-text);
-}
-
-body{
-    background-color: var(--color-background);
-    /* overflow-x: hidden; */
+    /* color: var(--color-primary-text); */
 }
 
 a{
@@ -184,7 +179,7 @@ footer{
 #hero{
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url(/UIDev-A3/images/Hero-image.png);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url(/UIDev-A3/images/homepage/Hero-image.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -281,6 +276,7 @@ footer{
     padding: 2em;
     border-radius: 5rem;
     margin: auto;
+    max-width: 40%;
 }
 
 /* Menu section */
@@ -444,6 +440,10 @@ footer{
     margin: 1em 0;
 }
 
+.product__price{
+    font-size: var(--text-xl);
+}
+
 .product__description{
     font-size: var(--text-lg);
     font-family:var(--font-primary);
@@ -463,12 +463,18 @@ footer{
 #add-on__option-list{
     display: none;
 }
+.add-on__option{
+    flex-wrap: nowrap;
+}
 #add-on__option-list.active{
     display: flex;
 }
 
 #add-on__option-list, .counter{
     gap: 1em;
+}
+.counter{
+    justify-content: flex-end;
 }
 .counter__minus, .counter__plus{
     width: 2em;
@@ -481,7 +487,10 @@ footer{
 .counter__number, .add-on__option__name{
     margin: 0;
 }
-
+.add-on__option__name{
+    width: 70%;
+    text-align: left;
+}
 .add-to-cart-cta{
     justify-content: space-between;
     align-items: center;
@@ -493,7 +502,6 @@ footer{
     justify-content: flex-start;
     gap: 0.1em;
 }
-
 
 .qty__input{
     outline: none;
@@ -850,7 +858,15 @@ footer{
     .mob-hidden{
         display: none;
     }
+    .carousel__prev-mob, .carousel__next-mob{
+        display: none;
+    }
     /* End of homepage */
+    /* Product page */
+    .add-to-cart-cta{
+        justify-content: flex-start;
+        gap: 1em;
+    }
 }
 /* Viewport for mobile */
 @media screen and (width<=425px){
@@ -908,9 +924,6 @@ footer{
     }
     .menu-item{
         width: auto;
-    }
-    .carousel__prev-mob, .carousel__next-mob{
-        display: none;
     }
 
 }   
