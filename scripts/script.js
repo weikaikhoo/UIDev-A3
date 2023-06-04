@@ -48,13 +48,18 @@ window.onload = function(){
     
                 mobActive.forEach(function(mobItem){
                     mobItem.classList.replace("carousel__active-mob", "carousel__next-mob");
+                    mobItem.classList.remove("carousel__item--active");
                 });
                 mobNext.forEach(function(mobItem){
                     mobItem.classList.replace("carousel__next-mob", "carousel__prev-mob");
                 });
-                mobPrev.forEach(function(mobItem){
-                    mobItem.classList.replace("carousel__prev-mob", "carousel__active-mob");
-                }); 
+                setTimeout(function(){
+                    mobPrev.forEach(function(mobItem){
+                        mobItem.classList.replace("carousel__prev-mob", "carousel__active-mob");
+                        mobItem.classList.add("carousel__item--active");
+                    }); 
+                }, 100)
+
             });
             // Mob version of right arrow
             carouselArrowRight.addEventListener("click", function(){
@@ -65,10 +70,15 @@ window.onload = function(){
     
                 mobActive.forEach(function(mobItem){
                     mobItem.classList.replace("carousel__active-mob", "carousel__prev-mob");
+                    mobItem.classList.remove("carousel__item--active");
                 });
-                mobNext.forEach(function(mobItem){
-                    mobItem.classList.replace("carousel__next-mob", "carousel__active-mob");
-                });
+                setTimeout(function(){
+                    mobNext.forEach(function(mobItem){
+                        mobItem.classList.replace("carousel__next-mob", "carousel__active-mob");
+                        mobItem.classList.add("carousel__item--active");
+                    });
+                }, 100)
+
                 mobPrev.forEach(function(mobItem){
                     mobItem.classList.replace("carousel__prev-mob", "carousel__next-mob");
                 }); 
@@ -94,12 +104,15 @@ window.onload = function(){
                 // Change active page to new next page
                 activeOne.forEach(function(item){
                     item.classList.replace("carousel__active--1", "carousel__next--1");
+                    item.classList.remove("carousell__item--active");
                 });
                 activeTwo.forEach(function(item){
                     item.classList.replace("carousel__active--2", "carousel__next--2");
+                    item.classList.remove("carousell__item--active");
                 });
                 activeThree.forEach(function(item){
                     item.classList.replace("carousel__active--3", "carousel__next--3");
+                    item.classList.remove("carousell__item--active");
                 })
                 
                 // Change prev next page to new previous page
@@ -114,15 +127,23 @@ window.onload = function(){
                 })
 
                 // Change prev previous page to new active page
-                prevOne.forEach(function(item){
-                    item.classList.replace("carousel__prev--1", "carousel__active--1");
-                });
-                prevTwo.forEach(function(item){
-                    item.classList.replace("carousel__prev--2", "carousel__active--2");
-                });
-                prevThree.forEach(function(item){
-                    item.classList.replace("carousel__prev--3", "carousel__active--3");
-                });
+                setTimeout(function(){
+                    // Adding animation for next active page
+                    prevOne.forEach(function(item){
+                        item.classList.replace("carousel__prev--1", "carousel__active--1");
+                        item.classList.add("carousel__item--active");
+                    });
+                    prevTwo.forEach(function(item){
+                        item.classList.replace("carousel__prev--2", "carousel__active--2");
+                        item.classList.add("carousel__item--active");
+                    });
+                    prevThree.forEach(function(item){
+                        item.classList.replace("carousel__prev--3", "carousel__active--3");
+                        item.classList.add("carousel__item--active");
+                    });
+                }, 100);
+
+
             });
 
             // Right arrow functionality
@@ -144,24 +165,34 @@ window.onload = function(){
                 // Change active page to new prev page
                 activeOne.forEach(function(item){
                     item.classList.replace("carousel__active--1", "carousel__prev--1");
+                    item.classList.remove("carousell__item--active");
                 });
                 activeTwo.forEach(function(item){
                     item.classList.replace("carousel__active--2", "carousel__prev--2");
+                    item.classList.remove("carousell__item--active");
                 });
                 activeThree.forEach(function(item){
                     item.classList.replace("carousel__active--3", "carousel__prev--3");
+                    item.classList.remove("carousell__item--active");
                 })
                 
                 // Change prev next page to new active page
-                nextOne.forEach(function(item){
-                    item.classList.replace("carousel__next--1", "carousel__active--1");
-                });
-                nextTwo.forEach(function(item){
-                    item.classList.replace("carousel__next--2", "carousel__active--2");
-                });
-                nextThree.forEach(function(item){
-                    item.classList.replace("carousel__next--3", "carousel__active--3");
-                })
+                setTimeout(function(){
+                    // Adding animation for next active page
+                    nextOne.forEach(function(item){
+                        item.classList.replace("carousel__next--1", "carousel__active--1");
+                        item.classList.add("carousel__item--active");
+                    });
+                    nextTwo.forEach(function(item){
+                        item.classList.replace("carousel__next--2", "carousel__active--2");
+                        item.classList.add("carousel__item--active");
+                    });
+                    nextThree.forEach(function(item){
+                        item.classList.replace("carousel__next--3", "carousel__active--3");
+                        item.classList.add("carousel__item--active");
+                    })
+                },100);
+
                 // Change prev previous page to new next page
                 prevOne.forEach(function(item){
                     item.classList.replace("carousel__prev--1", "carousel__next--1");

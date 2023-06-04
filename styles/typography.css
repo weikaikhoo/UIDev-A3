@@ -11,17 +11,18 @@
     /* Type scale */
     --text-scale-ratio: 1.50;
     --text-scale-ratio-cta: 1.25;
-    /* Web captions & References 20px*/
+
+    /* Web captions & References 12.8px*/
     --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio-cta));
-    /* Web paragraph 24px*/
+    /* Web paragraph 16px*/
     --text-md: var(--text-base-size);
-    /* Web CTA 30px*/
+    /* Web CTA 20px*/
     --text-lg: calc(var(--text-base-size) * var(--text-scale-ratio-cta));
-    /* Web Subheading 45px*/
+    /* Web H3/Subheading 30px*/
     --text-xl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio));
-    /* Web H2 67.5px*/
+    /* Web H2 45px*/
     --text-xxl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio));
-    /* Web H1 101.3px*/
+    /* Web H1 67.5px*/
     --text-xxxl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
 
 
@@ -49,17 +50,17 @@
     --text-scale-ratio: 1.25;
     --text-scale-ratio-cta: 1.2;  
     
-      /* Mob captions & References 20px*/
+      /* Mob captions & References 10.67px*/
       --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio-cta));
-      /* Mob paragraph 24px*/
+      /* Mob paragraph 12.8px*/
       --text-md: calc(var(--text-base-size));
-      /* Mob CTA 30px*/
+      /* Mob CTA 15.36px*/
       --text-lg: calc(var(--text-base-size) * var(--text-scale-ratio-cta));
-      /* Mob Subheading 45px*/
+      /* Mob H3/Subheading 19.2px*/
       --text-xl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio));
-      /* Mob H2 67.5px*/
+      /* Mob H2 24px*/
       --text-xxl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio));
-      /* Mob H1 101.3px*/
+      /* Mob H1 30px*/
       --text-xxxl: calc(var(--text-base-size) * var(--text-scale-ratio-cta) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
     }
 }

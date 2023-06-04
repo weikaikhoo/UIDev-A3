@@ -1,28 +1,26 @@
-@keyframes slidein{
-    from{ 
-        margin-left: 100%;
-        width: 0%;
-    }
-    to{ 
-        font-size: 100%;
-        margin-left: 0%;
-        width: 40%;
-    }
+.cart-menu{
+    transition: 0.3s;
 }
-.fade-in-element {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .fade-in {
-    opacity: 1;
-  }
+.bar{
+    -webkit-transition: all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+}
+.btn{
+    transition: all 0.2s;
+}
+.navbtn{
+    transition: 0.7s ease;
+}
+.nav-link{
+    transition: 0.7s ease;
+}
+
 #carousel__left-arrow {
-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 #carousel__left-arrow:hover {
-transform: translateX(-5px);
+    transform: translateX(-5px);
 }
 #carousel__right-arrow {
     transition: transform 0.3s ease;
@@ -31,3 +29,4 @@ transform: translateX(-5px);
 #carousel__right-arrow:hover {
     transform: translateX(5px);
 }
+
