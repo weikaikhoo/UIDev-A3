@@ -21,3 +21,16 @@
 body{
     background-color: var(--color-background);
 }
+
+.color-set--primary{
+    background-color: var(--color-background);
+    color: var(--color-primary-text);
+}
+.color-set--cta{
+    background-color: var(--color-cta);
+    color: var(--color-background);
+}
+.color-set--cta-invert{
+    background-color: var(--color-background);
+    color: var(--color-cta);
+}

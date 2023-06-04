@@ -13,7 +13,6 @@ window.onload = function(){
             navMenu.classList.remove("active");
     }));
 
-
     // cart menu toggle
     const cart = document.querySelector("#cart");
     const cartMenu = document.querySelector(".cart-menu");
@@ -240,7 +239,6 @@ window.onload = function(){
         //end of seeMoreMenuMains function
     }
 
-    
     // Beverages See more
     const seeMoreMenuBeverages = document.querySelector("#see-more--beverages");
     const moreBeverages = document.querySelectorAll(".more--beverages");
@@ -266,7 +264,6 @@ window.onload = function(){
         }); //end of seeMoreMenuBeverages
     }
 
-
     // Menu page filter
     const filter = document.querySelector("#filter");
     const filterBar = document.querySelector("#filter-bar");
@@ -280,7 +277,6 @@ window.onload = function(){
     }
 
     // Filter options
-    
     const filterLunch = document.querySelector("#filter-option--lunch");
     const menuDinner = document.querySelectorAll(".menu-item--dinner");
     const filterSnacks = document.querySelector("#filter-option--snacks");
@@ -294,7 +290,7 @@ window.onload = function(){
     // Filter snacks
     if (filterSnacks){
         filterSnacks.addEventListener("click", function(){
-            if (filterSnacks.classList.contains("btn--primary")){
+            if (filterSnacks.classList.contains("btn--secondary")){
                 sectionAppetizers.classList.add("display-none");
                 sectionMains.classList.add("display-none");
                 sectionDesserts.classList.add("display-none");
@@ -309,11 +305,10 @@ window.onload = function(){
         }); //end of filter snacks
     }
 
-
     // Mains snacks
     if (filterMains){
         filterMains.addEventListener("click", function(){
-            if (filterMains.classList.contains("btn--primary")){
+            if (filterMains.classList.contains("btn--secondary")){
                 sectionAppetizers.classList.add("display-none");
                 sectionSnacks.classList.add("display-none");
                 sectionDesserts.classList.add("display-none");
@@ -328,12 +323,10 @@ window.onload = function(){
         }); //end of Mains snacks
     }
 
-    
     //  Only hides when lunch option is active
     if (filterLunch){
         filterLunch.addEventListener("click", function(){
-            if (filterLunch.classList.contains("btn--primary")){
-    
+            if (filterLunch.classList.contains("btn--secondary")){
                     menuDinner.forEach(function(item){
                         item.classList.add("hidden");
                     })
@@ -350,7 +343,6 @@ window.onload = function(){
             }
         })
     }    
-
     // --------------------------Product Page------------------------------------------
     // Add on list expand
     const addonList = document.querySelector("#add-on__option-list");
@@ -555,7 +547,6 @@ window.onload = function(){
         }); //End of btn transition from secondary to primary
     }
 
-
     // --------------------------Order Page------------------------------------------
     // Takeaway button
     const toggleTakeaway = document.querySelector("#toggle--takeaway");
@@ -564,7 +555,6 @@ window.onload = function(){
     const chargeDelivery = document.querySelector("#delivery-charge");
     // Address section of form
     const textboxAddress = document.querySelectorAll(".textbox-address");
-
 
     if (toggleTakeaway && toggleDelivery){
         toggleTakeaway.addEventListener("click", function(){
@@ -587,6 +577,7 @@ window.onload = function(){
                 });
             }
         })
+
         toggleDelivery.addEventListener("click", function(){
             if (!toggleDelivery.classList.contains("disabled")){
                 toggleDelivery.classList.remove("disabled");
@@ -603,7 +594,6 @@ window.onload = function(){
         })
     }
 
-    
     // Expanding the payment option
     const radioPayment = document.querySelectorAll(".payment-option__radio");
     const radioCreditCard = document.querySelector("#radio--creditcard");
@@ -644,7 +634,6 @@ window.onload = function(){
         btnCheckout.addEventListener("click", validateForm);
     }
     
-
     function validateForm(){
         // name
         const inputName = document.querySelector("#input-name");
@@ -842,6 +831,9 @@ window.onload = function(){
 
         return true
     }
+
+
+
 
 } //end of window.onload
 

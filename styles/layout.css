@@ -23,13 +23,16 @@
 .cluster{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     align-items: center;
     /* margin-bottom: 0.25rem; */
 }
 .cluster--flex-end{
     justify-content: flex-end;
+}
+.cluster--wrap{
+    flex-wrap: wrap;
 }
 
 /* In order to make an element be on top */
@@ -153,8 +156,14 @@
 #options{
     grid-area: options;
 }
+.space-fill{
+    grid-area: background-fill;
+}
 #order{
     grid-area: order;
+}
+#order-cart{
+    grid-area: order-cart;
 }
 
 
@@ -165,8 +174,18 @@
         grid-template-rows: 20em;
         grid-gap:var(--space-5xl) var(--space-xl);
     }
-    .grid-container--carousel{
+    /* .grid-container--carousel{
         grid-template-columns: repeat(5, 1fr);
+    } */
+    .grid-container--carousel{
+        grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+        grid-template-rows: 0 16em 0;
+        grid-template-areas: 
+        "left-arrow prev-1 prev-2 prev-3 right-arrow"
+        "left-arrow active-1 active-2 active-3 right-arrow"
+        "left-arrow next-1 next-2 next-3 right-arrow";
+        justify-content: center;
+        margin-top: 0;
     }
     .grid-container--2r{
         grid-template-rows: repeat(2, 20em);
@@ -200,6 +219,18 @@
     }
     .grid-container--carousel{
         grid-template-rows: 0 14em 0;
+    }
+}
+@media screen and (width < 1024px){
+    /* Order Page Grid */
+    .grid-container--order{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        "order-cart"
+        "options"
+        "order";
     }
 }
 /* Viewport for Table to mobile */
@@ -247,17 +278,6 @@
     /* Use javascript to make it grid__item--1 or CSS it */
     .grid__item--2--home{
         grid-column: 2/3;
-    }
-
-    /* Order Page Grid */
-    .grid-container--order{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
-        grid-template-areas: 
-        "options"
-        "order"
-        "order-cart";
     }
 
 }
