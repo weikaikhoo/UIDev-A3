@@ -82,8 +82,7 @@
                         <input id="input-tel" class="form__elements__textbox phone" 
                         type="tel" 
                         name="phone" 
-                        required pattern="(\(|\)|-|[0-9])*"
-                        oninvalid="this.setCustomValidity('Please enter only digits, brackets, hyphen')"/>
+                        required pattern="(\(|\)|-|[0-9])*"/>
                         <div id="tel__error" class="form__error__msg"></div>
                         <label for="phone" class="form__elements__label">Mobile Number</label>
                     </div>
@@ -212,8 +211,7 @@
                                     <input id="input-cvc" class="form__elements__textbox form__elements__textbox--payment cvc" 
                                     type="password" 
                                     name="CVC" 
-                                    required pattern="(\(|\)|-|[0-9])*"
-                                    oninvalid="this.setCustomValidity('Please enter only 3 digits')"/>
+                                    required pattern="(\(|\)|-|[0-9])*"/>
                                     <div id="cvc__error" class="form__error__msg"></div>
                                     <label for="CVC" class="form__elements__label">CVC</label>
                                 </div>

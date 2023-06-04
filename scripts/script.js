@@ -586,9 +586,14 @@ window.onload = function(){
     const chargeDelivery = document.querySelector("#delivery-charge");
     // Address section of form
     const textboxAddress = document.querySelectorAll(".textbox-address");
+    const inputAddress = document.querySelector("#input-address");
+    const inputCity = document.querySelector("#input-city");
+    const inputState = document.querySelector("#input-state");
+    const inputPostcode = document.querySelector("#input-postcode");
 
     if (toggleTakeaway && toggleDelivery){
         toggleTakeaway.addEventListener("click", function(){
+            // Takeaway is selected and address section is disabled
             if (!toggleTakeaway.classList.contains("disabled")){
                 toggleTakeaway.classList.remove("disabled");
                 toggleTakeaway.classList.add("btn--primary");
@@ -596,20 +601,30 @@ window.onload = function(){
                 toggleDelivery.classList.add("disabled");
                 textboxAddress.forEach(function(textbox){
                     textbox.classList.add("form-disabled");
+                    inputAddress.value = "Li Damansara Jaya";
+                    inputCity.value = "Petaling Jaya";
+                    inputState.value = "Selangor";
+                    inputPostcode.value = "47400";
                 });
                 
             }
+            // Takeaway is selected after it was disabled
             if (toggleTakeaway.classList.contains("disabled")){
                 toggleTakeaway.classList.replace("disabled", "btn--primary");
                 toggleDelivery.classList.replace("btn--primary", "disabled");
                 chargeDelivery.classList.add("display-none");
                 textboxAddress.forEach(function(textbox){
                     textbox.classList.add("form-disabled");
+                    inputAddress.value = "Li Damansara Jaya";
+                    inputCity.value = "Petaling Jaya";
+                    inputState.value = "Selangor";
+                    inputPostcode.value = "47400";
                 });
             }
         })
 
         toggleDelivery.addEventListener("click", function(){
+            // Toggle Delivery is selected
             if (!toggleDelivery.classList.contains("disabled")){
                 toggleDelivery.classList.remove("disabled");
                 toggleDelivery.classList.add("btn--primary");
@@ -624,6 +639,10 @@ window.onload = function(){
                 chargeDelivery.classList.remove("display-none");
                 textboxAddress.forEach(function(textbox){
                     textbox.classList.remove("form-disabled");
+                    inputAddress.value = "";
+                    inputCity.value = "";
+                    inputState.value = "";
+                    inputPostcode.value = "";
                 });
                 // when toggleDelivery is on the error messages shouldn't be needed
             }
@@ -716,10 +735,9 @@ window.onload = function(){
         // Address Street line 1 validity
         const inputAddress = document.querySelector("#input-address");
         const errorAddress = document.querySelector("#address__error");
-        const toggleTakeaway = document.querySelector("#toggle--takeaway");
         let addressValue = inputAddress.value.trim();
 
-        if (toggleTakeaway.classList.contains("btn--primary")){
+        if (inputAddress.classList.contains("form-disabled")){
             // Disable address field when toggleDelivery is active
             inputAddress.disabled = true;
             inputAddress.classList.remove("error");
@@ -730,11 +748,10 @@ window.onload = function(){
             inputAddress.disabled = false;
             inputAddress.setAttribute("required", "required");
         }    
-        if ((!toggleTakeaway.classList.contains("btn--primary")) && addressValue.length=== 0){
+        if ((!inputAddress.classList.contains("form-disabled")) && addressValue.length=== 0){
             inputAddress.classList.add("error");
             errorAddress.innerText = "Address is required"; 
         }
-
         else{
             inputAddress.classList.remove("error");
             errorAddress.innerText="";
@@ -743,7 +760,7 @@ window.onload = function(){
         // City Validity
         const inputCity = document.querySelector("#input-city");
         const errorCity = document.querySelector("#city__error");
-        if (toggleTakeaway.classList.contains("btn--primary")){
+        if (inputCity.classList.contains("form-disabled")){
             // Disable address field when toggleDelivery is active
             inputCity.disabled = true;
             inputCity.classList.remove("error");
@@ -754,7 +771,7 @@ window.onload = function(){
             inputCity.disabled = false;
             inputCity.setAttribute("required", "required");
         }   
-        if ((!toggleTakeaway.classList.contains("btn--primary")) && (inputCity.value == "" || inputCity.value == null)){
+        if ((!inputCity.classList.contains("form-disabled")) && (inputCity.value == "" || inputCity.value == null)){
             inputCity.classList.add("error");
             errorCity.innerText = "Please enter a valid city";
             return false;
@@ -767,7 +784,7 @@ window.onload = function(){
         // State Validity
         const inputState = document.querySelector("#input-state");
         const errorState = document.querySelector("#state__error");
-        if (toggleTakeaway.classList.contains("btn--primary")){
+        if (inputState.classList.contains("form-disabled")){
             // Disable address field when toggleDelivery is active
             inputState.disabled = true;
             inputState.classList.remove("error");
@@ -778,7 +795,7 @@ window.onload = function(){
             inputState.disabled = false;
             inputState.setAttribute("required", "required");
         }  
-        if ((!toggleTakeaway.classList.contains("btn--primary")) && (inputState.value == "" || inputState.value == null)){
+        if ((!inputState.classList.contains("form-disabled")) && (inputState.value == "" || inputState.value == null)){
             inputState.classList.add("error");
             errorState.innerText = "Enter a valid state"; 
             return false;
@@ -791,7 +808,7 @@ window.onload = function(){
         // Postcode
         const inputPostcode = document.querySelector("#input-postcode");
         const errorPostcode = document.querySelector("#postcode__error");
-        if (toggleTakeaway.classList.contains("btn--primary")){
+        if (inputPostcode.classList.contains("form-disabled")){
             // Disable address field when toggleDelivery is active
             inputPostcode.disabled = true;
             inputPostcode.classList.remove("error");
@@ -802,7 +819,7 @@ window.onload = function(){
             inputPostcode.disabled = false;
             inputPostcode.setAttribute("required", "required");
         }  
-        if ((!toggleTakeaway.classList.contains("btn--primary")) && (inputPostcode.value == "" || inputPostcode.value == null)){
+        if ((!inputPostcode.classList.contains("form-disabled")) && (inputPostcode.value == "" || inputPostcode.value == null)){
             inputPostcode.classList.add("error");
             errorPostcode.innerText = "Please enter a valid postcode";
             return false;
