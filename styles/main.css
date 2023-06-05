@@ -280,6 +280,7 @@ footer{
 /* See more */
 .see-more-container--menu{
     /* +.cluster */
+    display: flex;
     justify-content: flex-end;
 }
 .btn--see-more:hover{
